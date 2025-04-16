@@ -9,7 +9,7 @@ Made for no reason by Malachi Henson on 4/15/2025
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="icon" href="https://malachihenson.github.io/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
         <style>
             body {
                 margin: 0;
@@ -95,8 +95,9 @@ Made for no reason by Malachi Henson on 4/15/2025
                 display: none;
             }
             .modalBox {
+                display: none;
                 width: 60%;
-                margin: 15% auto;
+                margin: 10% auto;
                 background-color: #ffffff;
                 padding: 20px 10px;
                 border: 1px solid black;
@@ -152,12 +153,21 @@ Made for no reason by Malachi Henson on 4/15/2025
                 margin-left: 90%;
                 font-size: 32px;
             }
+            #warningLogo {
+                width: 20%;
+                height: auto;
+                margin: 0 auto;
+            }
+            .modalSubtext {
+                font-weight: 300;
+                margin: 30px 0;
+            }
         </style>
     </head>
     <body>
         <header>
             <nav>
-                <img id="logo" src="https://malachihenson.github.io/logo.png">
+                <img id="logo" src="logo.png">
                 <h1 id="welcomeText">Good morning, Unregistered</h1>
             </nav>
         </header>
@@ -180,19 +190,26 @@ Made for no reason by Malachi Henson on 4/15/2025
             <button class="bigButton" onclick="withdraw();">Withdraw</button>
         </main>
         <div id="modalContainer">
-            <div id="numberModal" class="modalBox" style="display: none;">
+            <div id="numberModal" class="modalBox">
                 <span class="hide" onclick="hideModals();">&times;</span>
                 <h1 class="bigModalText" id="numberText">How much would you like to deposit?</h1>
                 <span id="dolla">$</span>
                 <input type="number" step="0.01" min="0.00" max="1000000000.00" placeholder="Enter a dollar value here..." class="modalInput" id="numberBox">
-                <button class="modalButton" onclick="updateBalance();">Submit</button>
-                <p id="numberRed" class="redText">You cannot withdraw more than your account balance!</p>
+                <button class="modalButton" onclick="updateBalance(false);">Submit</button>
             </div>
-            <div id="textModal" class="modalBox" style="display: none;">
+            <div id="textModal" class="modalBox">
                 <h1 class="bigModalText">What's your name?</h1>
                 <input type="text" placeholder="Enter a your name here..." class="modalInput" id="nameBox">
                 <button class="modalButton" onclick="submitName();">Submit</button>
                 <p id="nameRed" class="redText">You must submit a name!</p>
+            </div>
+            <div id="warningModal" class="modalBox">
+                <img src="warning.svg" id="warningLogo">
+                <h1 class="bigModalText">Warning!</h1>
+                <h2 class="modalSubtext" id="warningText">hahahahahahahahahhahhah</h2>
+                <br>
+                <button class="modalButton" onclick="updateBalance(true);">Confirm</button>
+                <button class="modalButton" onclick="hideModals();">Cancel</button>
             </div>
         </div>
     </body>
@@ -206,8 +223,9 @@ Made for no reason by Malachi Henson on 4/15/2025
         var modalContainer = document.getElementById("modalContainer");
         var numberModal = document.getElementById("numberModal");
         var textModal = document.getElementById("textModal");
-        var numberRed = document.getElementById("numberRed");
+        var warningModal = document.getElementById("warningModal");
         var nameRed = document.getElementById("nameRed");
+        var warningText = document.getElementById("warningText");
         var moneyMode = 0;
         const formatter = new Intl.NumberFormat("en-US", {
             style: "currency",
@@ -218,10 +236,10 @@ Made for no reason by Malachi Henson on 4/15/2025
             modalContainer.style.display = "block";
             textModal.style.display = "block";
             localStorage.setItem("dollars", 52);
-            updateBText(localStorage.getItem("dollars"));
+            updateBText();
         } else {
             welcomeText.innerHTML = "Hello, " + localStorage.getItem("name");
-            updateBText(localStorage.getItem("dollars"));
+            updateBText();
         }
 
         function deposit() {
@@ -236,30 +254,42 @@ Made for no reason by Malachi Henson on 4/15/2025
             numberText.innerHTML = "How much would you like to withdraw?";
             moneyMode = 2;
         }
-        function updateBalance() {
+        function updateBalance(confirmed) {
             if(moneyMode == 1) {
                 localStorage.setItem("dollars", parseFloat(localStorage.getItem("dollars")) + parseFloat(numberBox.value));
-                updateBText(localStorage.getItem("dollars"));
-                numberModal.style.display = "none";
-                modalContainer.style.display = "none";
-                moneyMode = 0;
-                numberBox.value = "";
+                updateBText();
+                hideModals();
             } else {
-                if(parseFloat(localStorage.getItem("dollars")) >= parseFloat(numberBox.value)) {
-                    localStorage.setItem("dollars", parseFloat(localStorage.getItem("dollars")) - parseFloat(numberBox.value));
-                    updateBText(localStorage.getItem("dollars"));
-                    numberModal.style.display = "none";
-                    modalContainer.style.display = "none";
-                    moneyMode = 0;
-                    numberBox.value = "";
-                    numberRed.style.display = "none";
+                if(confirmed == false) {
+                    if(parseFloat(localStorage.getItem("dollars")) >= parseFloat(numberBox.value)) {
+                        localStorage.setItem("dollars", parseFloat(localStorage.getItem("dollars")) - parseFloat(numberBox.value));
+                        updateBText();
+                        hideModals();
+                    } else {
+                        numberModal.style.display = "none";
+                        warningModal.style.display = "block";
+                        if(parseFloat(localStorage.getItem("dollars")) >= 0) {
+                            warningText.innerHTML = "You are about to withdraw more than your account balance. This will cause you to go into invisible debt. Are you sure you want to do this?";
+                        } else if(parseFloat(localStorage.getItem("dollars")) >= -1000000) {
+                            warningText.innerHTML = "You are already in debt. Are you sure you want to withdraw more money?";
+                        } else {
+                            warningText.innerHTML = "Are you crazy?????";
+                        }
+                    }
                 } else {
-                    numberRed.style.display = "block";
+                    localStorage.setItem("dollars", parseFloat(localStorage.getItem("dollars")) - parseFloat(numberBox.value));
+                    updateBText();
+                    hideModals();
                 }
             }
         }
-        function updateBText(amt) {
-            balance.innerHTML = formatter.format(amt);
+        function updateBText() {
+            balance.innerHTML = formatter.format(localStorage.getItem("dollars"));
+            if(parseFloat(localStorage.getItem("dollars")) < 0) {
+                balance.style.color = "#ff0000";
+            } else {
+                balance.style.color = "#000000";
+            }
         }
         function submitName() {
             if(nameBox.value) {
@@ -275,6 +305,9 @@ Made for no reason by Malachi Henson on 4/15/2025
         function hideModals() {
             modalContainer.style.display = "none";
             numberModal.style.display = "none";
+            warningModal.style.display = "none";
+            moneyMode = 0;
+            numberBox.value = "";
         }
     </script>
 </html>
