@@ -1,7 +1,280 @@
+<!--
+THE INVISIBLE BANK
+Made for no reason by Malachi Henson on 4/15/2025
+-->
+<!DOCTYPE html>
 <html>
+    <head>
+        <title>The Invisible Bank</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <style>
+            body {
+                margin: 0;
+                font-family: "Roboto", sans-serif;
+            }
+            nav {
+                background-color: #2e5e21;
+                padding: 20px 40px;
+                display: flex;
+                justify-content: space-between;
+            }
+            #welcomeText {
+                text-align: left;
+                color: #ffffff;
+                font-weight: 300;
+            }
+            main {
+                width: 80%;
+                margin: auto;
+            }
+            #acct {
+                margin-top: 50px;
+                font-size: 48px;
+                font-weight: 400;
+            }
+            hr {
+                width: 85%;
+                float: left;
+                border: 1px solid black;
+                margin-top: -10px;
+            }
+            #acctBal {
+                font-size: 36px;
+                font-weight: 300;
+            }
+            #bigNumbers {
+                display: flex;
+                justify-content: space-around;
+                margin: 20px 0;
+            }
+            .numberThing {
+                text-align: center;
+            }
+            .bigNumber {
+                font-size: 72px;
+                font-weight: 200;
+            }
+            .bigSubtext {
+                font-size: 24px;
+                font-weight: 300;
+            }
+            .bigButton {
+                display: block;
+                width: 95%;
+                margin: 20px auto;
+                height: 100px;
+                background-color: #2e5e21;
+                color: #ffffff;
+                font-size: 48px;
+                font-family: "Roboto", sans-serif;
+                font-weight: 300;
+                border-radius: 10px;
+                border: none;
+                transition: height 0.2s, width 0.2s;
+            }
+            .bigButton:hover {
+                width: 98%;
+                height: 105px;
+            }
+            .bigButton:active {
+                width: 96%;
+                height: 102px;
+            }
+            #modalContainer {
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                backdrop-filter: blur(10px);
+                display: none;
+            }
+            .modalBox {
+                width: 60%;
+                margin: 15% auto;
+                background-color: #ffffff;
+                padding: 20px 10px;
+                border: 1px solid black;
+                border-radius: 10px;
+                text-align: center;
+            }
+            .bigModalText {
+                font-weight: 300;
+                margin: 40px 0;
+            }
+            #dolla {
+                font-size: 36px;
+                position: relative;
+                top: 5px;
+                font-weight: 300;
+            }
+            .modalInput {
+                height: 36px;
+                width: 80%;
+                font-size: 24px;
+                font-family: "Roboto", sans-serif;
+                font-weight: 300;
+            }
+            .modalButton {
+                display: block;
+                width: 60%;
+                margin: 40px auto;
+                height: 48px;
+                border-radius: 10px;
+                background-color: #2e5e21;
+                color: white;
+                font-family: "Roboto", sans-serif;
+                font-size: 24px;
+                font-weight: 300;
+                border: 1px solid black;
+                transition: height 0.2s, width 0.2s;
+            }
+            .modalButton:hover {
+                height: 54px;
+                width: 65%;
+            }
+            .modalButton:active {
+                height: 50px;
+                width: 62%;
+            }
+            .redText {
+                color: red;
+                font-size: 20px;
+                display: none;
+            }
+            .hide {
+                width: 10%;
+                margin-left: 90%;
+                font-size: 32px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <img id="logo" src="logo.png">
+                <h1 id="welcomeText">Good morning, Unregistered</h1>
+            </nav>
+        </header>
+        <main>
+            <h1 id="acct">Account Summary</h1>
+            <hr>
+            <br>
+            <h2 id="acctBal">Your Balance</h2>
+            <div id="bigNumbers">
+                <div class="numberThing">
+                    <h1 class="bigNumber" id="balance">lol</h1>
+                    <h3 class="bigSubtext">Invisible Dollars</h3>
+                </div>
+                <div class="numberThing">
+                    <h1 class="bigNumber" id="intRate">3%</h1>
+                    <h3 class="bigSubtext">Weekly Interest Rate</h1>
+                </div>
+            </div>
+            <button class="bigButton" onclick="deposit();">Deposit</button>
+            <button class="bigButton" onclick="withdraw();">Withdraw</button>
+        </main>
+        <div id="modalContainer">
+            <div id="numberModal" class="modalBox" style="display: none;">
+                <span class="hide" onclick="hideModals();">&times;</span>
+                <h1 class="bigModalText" id="numberText">How much would you like to deposit?</h1>
+                <span id="dolla">$</span>
+                <input type="number" step="0.01" min="0.00" max="1000000000.00" placeholder="Enter a dollar value here..." class="modalInput" id="numberBox">
+                <button class="modalButton" onclick="updateBalance();">Submit</button>
+                <p id="numberRed" class="redText">You cannot withdraw more than your account balance!</p>
+            </div>
+            <div id="textModal" class="modalBox" style="display: none;">
+                <h1 class="bigModalText">What's your name?</h1>
+                <input type="text" placeholder="Enter a your name here..." class="modalInput" id="nameBox">
+                <button class="modalButton" onclick="submitName();">Submit</button>
+                <p id="nameRed" class="redText">You must submit a name!</p>
+            </div>
+        </div>
+    </body>
+    <script>
+        var welcomeText = document.getElementById("welcomeText");
+        var balance = document.getElementById("balance");
+        var intRate = document.getElementById("intRate");
+        var numberText = document.getElementById("numberText");
+        var numberBox = document.getElementById("numberBox");
+        var nameBox = document.getElementById("nameBox");
+        var modalContainer = document.getElementById("modalContainer");
+        var numberModal = document.getElementById("numberModal");
+        var textModal = document.getElementById("textModal");
+        var numberRed = document.getElementById("numberRed");
+        var nameRed = document.getElementById("nameRed");
+        var moneyMode = 0;
+        const formatter = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        });
+        if(localStorage.getItem("visitedBefore") == null) {
+            localStorage.setItem("visitedBefore", true);
+            modalContainer.style.display = "block";
+            textModal.style.display = "block";
+            localStorage.setItem("dollars", 52);
+            updateBText(localStorage.getItem("dollars"));
+        } else {
+            welcomeText.innerHTML = "Hello, " + localStorage.getItem("name");
+            updateBText(localStorage.getItem("dollars"));
+        }
 
-<body>
-  <h1>TEST</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
-</body>
+        function deposit() {
+            modalContainer.style.display = "block";
+            numberModal.style.display = "block";
+            numberText.innerHTML = "How much would you like to deposit?";
+            moneyMode = 1;
+        }
+        function withdraw() {
+            modalContainer.style.display = "block";
+            numberModal.style.display = "block";
+            numberText.innerHTML = "How much would you like to withdraw?";
+            moneyMode = 2;
+        }
+        function updateBalance() {
+            if(moneyMode == 1) {
+                localStorage.setItem("dollars", parseFloat(localStorage.getItem("dollars")) + parseFloat(numberBox.value));
+                updateBText(localStorage.getItem("dollars"));
+                numberModal.style.display = "none";
+                modalContainer.style.display = "none";
+                moneyMode = 0;
+                numberBox.value = "";
+            } else {
+                if(parseFloat(localStorage.getItem("dollars")) >= parseFloat(numberBox.value)) {
+                    localStorage.setItem("dollars", parseFloat(localStorage.getItem("dollars")) - parseFloat(numberBox.value));
+                    updateBText(localStorage.getItem("dollars"));
+                    numberModal.style.display = "none";
+                    modalContainer.style.display = "none";
+                    moneyMode = 0;
+                    numberBox.value = "";
+                    numberRed.style.display = "none";
+                } else {
+                    numberRed.style.display = "block";
+                }
+            }
+        }
+        function updateBText(amt) {
+            balance.innerHTML = formatter.format(amt);
+            console.log(formatter.format(amt));
+        }
+        function submitName() {
+            if(nameBox.value) {
+                textModal.style.display = "none";
+                modalContainer.style.display = "none";
+                localStorage.setItem("name", nameBox.value);
+                welcomeText.innerHTML = "Hello, " + nameBox.value;
+                nameRed.style.display = "none";
+            } else {
+                nameRed.style.display = "block";
+            }
+        }
+        function hideModals() {
+            modalContainer.style.display = "none";
+            numberModal.style.display = "none";
+        }
+    </script>
+</html>
