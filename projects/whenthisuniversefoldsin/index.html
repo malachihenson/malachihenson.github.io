@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Access Only</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <script src="https://requirejs.org/docs/release/2.3.7/minified/require.js""></script>"
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lacquer&display=swap');
         html {
             background-image: url("card.jpg");
         }
@@ -21,20 +20,77 @@
         h2 {
             font-size: 30px;
         }
+        input {
+            font-family: "Lacquer", system-ui;
+            margin-top: 50px;
+            width: 400px;
+            height: 50px;
+            font-size: 25px;
+            text-align: center;
+            border: 2px solid black;
+            background: none;
+        }
+        input:focus {
+            outline-style: solid;
+        }
+        a {
+            float: left;
+            color: black;
+            font-size: 40px;
+            margin-left: 50px;
+        }
+        button {
+            background: none;
+            font-family: "Lacquer", system-ui;
+            font-size: 25px;
+            padding: 5px 50px;
+            border: 2px solid black;
+        }
+        button:active {
+            border-width: 3px;
+        }
+        #help {
+            margin-top: 400px;
+        }
+        #help p {
+            opacity: 0;
+            user-select: none;
+            width: fit-content;
+            margin: auto;
+            font-size: 20px;
+        }
+        #help p:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
+    <a href="../../index.html">Home</a><br>
     <h1>Access Restricted</h1>
     <h2>This page is password-protected.</h2>
-    <input type="password" id="pass">
+    <input type="password" id="pass" placeholder="password...">
     <br>
     <br>
     <button onclick="checkPass();">Submit</button>
+    <br>
+    <div id="help">
+        <p>in a place of corrugation</p>
+        <p>written in a modern script that no man can read</p>
+    </div>
 </body>
 <script>
+    
     //did you really think I was going to leave the password sitting out in the open? well, it actually is :D
     //md5
-    var hash = "d4dbb783c73ae06a17794ae613e6c632";
+    var hash = "2337057df89ff80c198236313e40f2dd";
     //same story for the content...
+    //alert(CryptoJS.AES.encrypt("malachihenson.net/blog/andmakesanother.html", "ccJw40oRMAESml+r"));
+    var CryptoJS = require("crypto-js");
+    function checkPass() {
+        var ciphertext = CryptoJS.AES.encrypt('my message', 'secret key 123').toString();
+        var bytes  = CryptoJS.AES.decrypt(ciphertext, 'secret key 123');
+        var originalText = bytes.toString(CryptoJS.enc.Utf8);
+        console.log(originalText);
+    }
 </script>
 </html>
