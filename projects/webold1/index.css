@@ -1,0 +1,157 @@
+@font-face {
+    font-family: font1;
+    font-style: normal;
+    font-weight: 200;
+    src: url(ChakraPetch-Regular.ttf);
+}
+@font-face {
+    font-family: font2;
+    font-style: normal;
+    font-weight: 400;
+    src: url(Silkscreen-Regular.ttf);
+}
+body {
+    font-family: font1;
+    margin: 0;
+}
+#text-bg-container {
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+#text-bg-container > .bg-text-left1, .bg-text-right1 {
+    position: relative;
+    white-space: nowrap;
+    opacity: 30%;
+}
+#centerText {
+    position: relative;
+    text-align: center;
+    font-size: 75px;
+    top: -300px;
+}
+#nav {
+    display: inline-block;
+    width: 100%;
+    background-color: #fce135;
+    padding: 15px;
+    overflow: hidden;
+}
+#wrapper {
+    overflow: hidden;
+}
+#projCont {
+    width: 90%;
+    margin: auto;
+}
+#malachiPic {
+    width: 20%;
+    height: 20%;
+}
+#bigPass {
+    width: 100%;
+    height: 60px;
+    font-size: 90px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    text-align: center;
+}
+#bigPassContainer {
+    width: 80%;
+    margin: 15% auto 5%;
+}
+#incorrectMessage {
+    text-align: center;
+    color: #F00;
+}
+#messageText {
+    font-size: 30px;
+    color: #03ef00;
+    margin-left: 20px;
+    font-family: font2;
+}
+.bg-text-left1 {
+    animation: mq1 25s linear infinite;
+}
+.bg-text-right1 {
+    animation: mq2 25s linear infinite;
+}
+.navEl {
+    color: #000;
+    text-decoration: none;
+    font-size: 30px;
+    padding: 20px 50px;
+}
+.navEl:hover {
+    text-decoration: underline;
+}
+.header {
+    text-align: center;
+    font-size: 50px;
+    margin: 10px 25px;
+}
+.subheader {
+    text-align: center;
+    font-size: 30px;
+    margin: 10px 25px;
+}
+.contactItem {
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+}
+.projImg {
+    width: 13%;
+    height: 13%;
+}
+.projText {
+    width: 80%;
+}
+.project {
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 10px;
+    color: #000;
+    margin: 20px 0;
+}
+.project > .projText, .projImg {
+    display: inline-block;
+}
+.imgtext {
+    width: 80%;
+    margin: auto;
+    padding: 30px;
+}
+.imgtext > img, p {
+    display: inline-block;
+}
+.imgtext > p {
+    width: 50%;
+    text-align: right;
+    margin: 0 10%;
+    font-size: 25px;
+}
+.imgtext > img {
+    border-radius: 5px;
+    transform: rotate(5deg);
+}
+.mesgBtns {
+    display: inline-block;
+    font-size: 40px;
+    border: 4px solid #03ef00;
+    padding: 5px 20px;
+    color: #03ef00;
+    font-family: font2;
+    margin: 5px 40px;
+    text-decoration: none;
+}
+@keyframes mq1 {
+    to {transform: translateX(0%);}
+    from {transform: translateX(-100%);}
+}
+@keyframes mq2 {
+    to {transform: translateX(-100%);}
+    from {transform: translateX(0%);}
+}
+

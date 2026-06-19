@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Links</title>
+    <style>
+        @font-face {
+            font-family: Melodica;
+            src: url("PixelPurl.ttf");
+        }
+        html {
+            background-image: url("img/links/bg.png");
+            background-repeat: repeat;
+            background-position: center;
+        }
+        #wrapper {
+            width: 60%;
+            margin: auto;
+        }
+        body {
+            font-family: Melodica, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            font-size: 75px;
+            font-weight: normal;
+        }
+        .linkBox img {
+            width: 25%;
+        }
+        #linkGrid {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+        .linkText a {
+            font-size: 30px;
+            font-weight: normal;
+        }
+        h3 {
+            font-weight: normal;
+        }
+        h2 {
+            font-weight: normal;
+            font-size: 25px;
+        }
+        @media screen and (max-width: 750px) {
+            #linkGrid {
+                grid-template-columns: auto;
+            }
+        }
+        a {
+            font-weight: normal;
+            display: block;
+            font-size: 40px;
+        }
+        img {
+            width: 15%;
+        }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Links</h1>
+        <br>
+        <div id="linkGrid">
+            <div class="linkBox">
+                <img src="img/links/youtube.gif">
+                <div class="linkText">
+                    <a href="https://www.youtube.com/@DoubleSharpStudios">YouTube (nothing here currently)</a>
+                    <h3>@doublesharpstudios</h3>
+                </div>
+            </div>
+            <div class="linkBox">
+                <img src="img/links/instagram.gif">
+                <div class="linkText">
+                    <a href="https://www.instagram.com/doublesharp.12/">Instagram</a>
+                    <h3>@doublesharp.12<br>(chill people accepted on a case-by-case basis)</h3>
+                </div>
+            </div>
+            <div class="linkBox">
+                <img src="img/links/itch.gif">
+                <div class="linkText">
+                    <a href="https://doublesharp.itch.io/">Itch (mostly dead)</a>
+                    <h3>doublesharp</h3>
+                </div>
+            </div>
+            <div class="linkBox">
+                <img src="img/links/email.gif">
+                <div class="linkText">
+                    <a href="mailto:malachihenson12@gmail.com">Email</a>
+                    <h3>malachihenson12@gmail.com</h3>
+                </div>
+            </div>
+        </div>
+        <img src="img/links/home.png">
+        <a href="index.html">Home</a>
+        <br>
+    </div>
+</body>
+</html>

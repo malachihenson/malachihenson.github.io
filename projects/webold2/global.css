@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0px;
+}
+nav {
+    background-color: #0BD79D;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.header {
+    text-align: center;
+    font-size: 4em;
+}
+.subheader {
+    text-align: center;
+    font-size: 2em;
+}
+hr {
+    height: 5px;
+    background-color: black;
+    width: 90%;
+    border-radius: 10px;
+}
+p {
+    text-align: center;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}

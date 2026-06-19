@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="balatro, localthunk, looping, time signature, layering, effects, sound effects, satisfying, gameplay, auditory space">
+    <meta name="description" content="While being released relatively recently, Balatro features an extremely well-designed single track for its entire game. It uses an odd time signature to make the track feel less like it has a definite end, and uses various effects to add variety.">
+    <title>Indie Game Music Theory</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="IGMT Logo" id="logo">
+        <div id="headerFlex">
+            <a href="index.html"><h1>Indie Game Music Theory v0.1 alpha</h1></a>
+            <h1 id="clock">23:46</h1>
+        </div>
+        <style>
+            
+            .box {
+                width: 80%;
+                min-width: 400px;
+            }
+            #clipGrid {
+                display: block;
+                margin: 40px 10%;
+            }
+            .aLeft {
+                grid-column: 1;
+            }
+            .aRight {
+                grid-column: 1
+            }
+            .aCenter {
+                grid-column: 1 / span 1;
+            }
+            @media only screen and (min-width: 1200px) {
+                #clipGrid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                .aLeft {
+                    grid-column: 1;
+                }
+                .aRight {
+                    grid-column: 2;
+                }
+                .aCenter {
+                    grid-column: 1 / span 2;
+                }
+            }
+            #clipGrid div p {
+                width: 80%;
+                margin: auto;
+                font-size: 25px;
+            }
+            h3 {
+                color: black;
+            }
+        </style>
+    </header>
+    <main>
+        <section class="box" id="mainBox">
+            <div class="deco-top" id="mainTop">
+                <p>balatro.exe</p>
+                <button id="closeBtn" onclick="closeWindow();">
+                    <img src="images/close1.png" width="75%" alt="Close Window Button">
+                </button>
+            </div>
+            <div class="box-body">
+                <div class="box-container">
+                    <h1>Balatro</h1>
+                    <h2>Making a Single Track Last</h2>   
+                    <!--
+                    TO DO:
+                    -Create music player
+                    -add custom audio player if time
+                    -fix broken close button
+                    -change rows so images display under paragraphs
+                    -->
+                    <div class="content-grid">
+                        <img src="images/balatroimg1.jpg" class="bodyCenter" width="60%;" alt="An image of an ongoing game of Balatro.">
+                        <p class="bodyCenter">Poker-themed roguelite Balatro is a relatively newly released game compared to many of the games discussed on this site, but it deserves discussion because of its unlikely origins and its innovative use of only a single track. Balatro’s developer, LocalThunk, lacked the ability to compose a soundtrack for the game, so he contracted the game’s composer, LouisF, through Fiverr. This arrangement would have made it much more difficult and expensive should LocalThunk have needed a more extensive soundtrack, but Balatro is a relatively simple game, and only needed one basic song to loop in the background. While many tracks looping for this long would quickly grow stale, Balatro employs a few tricks to keep its melody fresh. One of the most notable is its irregular time signature. The Balatro soundtrack is in 7/4, which, besides being a reference to the lucky number 7, has the feeling of hanging on a beat too long each measure, making the piece feel much less divided and rigid and allowing it to loop seamlessly because there is less of a perceived “end”.</p>
+                        
+                        <div class="demo">
+                            <audio id="demo1" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(0);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(0);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(0);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">Another technique used is the layering of various versions of the song, mostly simple effect changes such as increasing the reverb, and fading them in and out as the player does different things in the game. Balatro has five layers that it constantly blends, each with its own style.</p>
+                        <div id="clipGrid" class="bodyCenter">
+                            <div class="aLeft">
+                                <h3>Main Theme</h3>
+                                <audio controls>
+                                    <source src="audio/maintheme.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                                <p>The original track, used for the majority of the game.</p>
+                            </div>
+                            <div class="aRight">
+                                <h3>Shop Theme</h3>
+                                <audio controls>
+                                    <source src="audio/shoptheme.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                                <p>Used when the player enters the shop at the end of each round, played at a higher pitch with more reverb and pitch bends.</p>
+                            </div>
+                            <div class="aLeft">
+                                <h3>Arcana Theme</h3>
+                                <audio controls>
+                                    <source src="audio/arcanatheme.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                                <p>A much more stripped-down version of the track, with only the lead, pads, and percussion. Used when opening certain card packs, such as the namesake Arcana Pack.</p>
+                            </div>
+                            <div class="aRight">
+                                <h3>Celestial Theme</h3>
+                                <audio controls>
+                                    <source src="audio/celestialtheme.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                                <p>An even more bare track, with only the pads and minimal percussion. Used when opening other card packs, including the Celestial Pack.</p>
+                            </div>
+                            <div class="aCenter">
+                                <h3>Boss Theme</h3>
+                                <audio controls>
+                                    <source src="audio/bosstheme.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                                <p>A pitched-up version of the main theme without the lead, <br>used for the game’s “Boss Blinds” at the end of each ante.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">With this variation in tracks, combined with a drawn-out melody full of runs, Balatro’s one song feels much more adequate to fill an entire game. This is helped greatly by the extremely satisfying sound effects found throughout the game, which fill the auditory space more, as much of Balatro’s music occupies the lower frequencies, and break up the monotony.</p>
+                        <video width="75%" class="bodyCenter" controls>
+                            <source src="video/gameplay.mp4" type="video/mp4">
+                        </video>
+                        <p class="bodyCenter">Balatro’s incredible audio and visual quality make it no surprise that it gained a very large following soon after it released, despite the fact LocalThunk thought it would only sell 6 copies. Its satisfying gameplay, music, and sounds make it one of the most addictive games available today, and its music’s unlikely origins, just like everything else in the game, shows that anyone can create the next hit game.</p>
+                        <img src="images/balatroimg2.jpg" class="bodyCenter" width="70%;" alt="A completed game of Balatro, displaying the win screen.">
+                        <br>
+                        <p class="bodyCenter" id="credits">Balatro ©2024 LocalThunk, Playstack</p>
+                    </div>             
+                </div>
+            </div>
+        </section>
+        <nav id="iconGrid">
+            <a href="index.html">
+                <img src="images/home.png" alt="Home icon">
+                <p>Home</p>
+            </a>
+            <a href="undertale.html">
+                <img src="images/undertale.png" alt="Undertale icon">
+                <p>Undertale</p>
+            </a>
+            <a href="celeste.html">
+                <img src="images/celeste.png" alt="Celeste icon">
+                <p>Celeste</p>
+            </a>
+            <a href="stardewvalley.html">
+                <img src="images/stardewvalley.png" alt="Stardew Valley icon">
+                <p>Stardew Valley</p>
+            </a>
+            <a href="minecraft.html">
+                <img src="images/minecraft.png" alt="Minecraft icon">
+                <p>Minecraft</p>
+            </a>
+            <a href="balatro.html">
+                <img src="images/balatro.png" alt="Balatro icon">
+                <p>Balatro</p>
+            </a>
+        </nav>
+    </main>
+    <footer>
+        <nav id="bottomNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="undertale.html">Undertale</a></li>
+                <li><a href="celeste.html">Celeste</a></li>
+                <li><a href="stardewvalley.html">Stardew Valley</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="balatro.html">Balatro</a></li>
+            </ul>
+        </nav>
+        <p>All content ©2025 Malachi Henson, except where stated otherwise.</p>
+    </footer>
+</body>
+<script src="scripts/boxmove.js"></script>
+<script src="scripts/demoplayer.js"></script>
+</html>

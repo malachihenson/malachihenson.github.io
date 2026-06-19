@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>What could this be?</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body id="mainb">
+        <div id="wrapper">
+            <div id="passwordScreen">
+                <h1 class="header">Password Required</h1>
+                <h1 class="subheader">This page is for qualified personnel only</h1>
+                <div id="bigPassContainer">
+                    <input type="password" id="bigPass">
+                </div>
+                <h1 id="incorrectMessage">Incorrect password, try again!</h1>
+            </div>
+        </div>
+        <div id="message">
+            <p id="messageText"></p>
+        </div>
+        <div id="messageButtons">
+            <a href="puzzles\idontknow.html" class="mesgBtns">Yes</a>
+            <p class="mesgBtns" onclick="dothething();">No</p>
+        </div>
+    </body>
+    <script>
+        //congrats! You're not dumb!
+        // :)
+        var password = "cheese";
+        //You could look down here, but there's nothing of worth.
+        //Seriously, this is just the guts of the page
+        var inMes = document.getElementById("incorrectMessage");
+        var passwordScreen = document.getElementById("passwordScreen");
+        var bigPass = document.getElementById("bigPass");
+        var mainb = document.getElementById("mainb");
+        var message = document.getElementById("message");
+        var messageText = document.getElementById("messageText");
+        var messageButtons = document.getElementById("messageButtons");
+
+        var screen = 1;
+        var step = 0;
+        var line = 0;
+
+        var br;
+
+        var messages = ["Hello.", "You think you're pretty smart, don't you?", "Well, let's find out.", "I have prepared a series of 20 puzzles for you to solve.", "If you can solve them all, you will receive a prize.", "I will be watching you.", "Are you ready to start your challenge?"]
+
+        document.addEventListener("keydown", submitPass);
+        inMes.style.display = "none";
+        message.style.display = "none";
+        messageButtons.style.display = "none";
+        //find anything?
+        //Yeah, that's what I thought.
+        function submitPass() {
+            if(event.keyCode == 13 && screen == 1) {
+                if(bigPass.value == password) {
+                    transition(1);
+                    screen++;
+                } else {
+                    inMes.style.display = "block";
+                    setTimeout(function(){inMes.style.display = "none"}, 1000);
+                }
+            }
+        }
+        function transition(type) {
+            switch(type) {
+                case 1:
+                    passwordScreen.style.display = "none";
+                    mainb.style.backgroundColor = "#000";
+                    setTimeout(transition, 1000, 2);
+                    break;
+                case 2:
+                    message.style.display = "block";
+                    speak(step, line);
+                    break;
+            }
+        }
+        function speak(s, l) {
+            messageText.innerHTML = messageText.innerHTML + messages[l][s];
+            if(s < messages[l].length-1) {
+                step++;
+                setTimeout(speak, 100, step, line);
+            } else {
+                if(l < messages.length - 1) {
+                    step = 0;
+                    line++;
+                    br = document.createElement("br");
+                    messageText.appendChild(br);
+                    br = document.createElement("br");
+                    messageText.appendChild(br);
+                    setTimeout(speak, 1000, step, line);
+                } else {
+                    step = 0;
+                    line = 0;
+                    messages = ["Try again."];
+                    setTimeout(showButtons, 1000);
+                }
+            }
+        }
+        function showButtons() {
+            messageButtons.style.display = "block";
+        }
+        function dothething() {
+            messageButtons.style.display = "none";
+            messageText.innerHTML = "";
+            speakdos(step, line);
+        }
+        function speakdos(s, l) {
+            messageText.innerHTML = messageText.innerHTML + messages[l][s];
+            if(s < messages[l].length-1) {
+                step++;
+                setTimeout(speak, 100, step, line);
+            } else {
+                setTimeout(function(){window.close();}, 1000);
+            }
+        }
+    </script>
+</html>

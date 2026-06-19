@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="stardew valley, cozy game, soundtrack, percussion, beat, gameplay loop, timing, ambience, mixing, encourage">
+    <meta name="description" content="Stardew Valley’s music helps to make repetitive gameplay more fun by playing background music that syncs with the player’s actions. In addition to simply playing the music, when it starts is timed so that it doesn’t feel as abrupt.">
+    <title>Indie Game Music Theory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .box {
+            width: 80%;
+            min-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="IGMT Logo" id="logo">
+        <div id="headerFlex">
+            <a href="index.html"><h1>Indie Game Music Theory v0.1 alpha</h1></a>
+            <h1 id="clock">23:46</h1>
+        </div>
+    </header>
+    <main>
+        <section class="box" id="mainBox">
+            <div class="deco-top" id="mainTop">
+                <p>stardewvalley.exe</p>
+                <button id="closeBtn" onclick="closeWindow();">
+                    <img src="images/close1.png" width="75%">
+                </button>
+            </div>
+            <div class="box-body">
+                <div class="box-container">
+                    <h1>Stardew Valley</h1>
+                    <h2>Timing Music to Energize the Grind</h2>   
+                    <div class="content-grid">
+                        <img class="imgL" width="90%" src="images/stardewimg1.png" alt="An image of a Stardew Valley farm.">
+                        <p class="bodyRight">The farming sim Stardew Valley is the perfect example of a cozy game. The player is tasked with restoring a run-down farm while building a relationship with the nearby town’s friendly villagers. No intense mechanical skill or intelligence is required, only some spare time. Despite all this, and no matter how entertaining the core gameplay may be, there will eventually reach a point where the gameplay loop becomes repetitive. </p>
+                        <p class="bodyCenter">A typical day in the mid-to-late game of Stardew Valley usually involves waking up, checking on crops and animals, going into town to run a few errands, and then going to bed. This would become boring very quickly if not for the game’s excellent soundtrack and the times when it plays. Every morning when the player wakes up and steps outside their house, a track will immediately start playing with the intent to make the tasks they have to accomplish slightly easier. Most of these tracks will start by establishing a beat, and then layering a simple melody and a few accompanying tracks on top. An excellent example of this technique can be found in one track that plays during the summer.</p>
+                        <div class="demo">
+                            <audio id="demo1" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(0);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(0);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(0);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <p class="bodyLeft">Even during the winter of the game, where there are significantly less tasks for the player to accomplish, the game still plays morning tracks that serve to encourage the player to use the day to get tasks done that they may not have had time for in the other seasons, even if they do so a little more slowly. The winter tracks typically trade faster and more energetic musical ideas for more composed and developed ones, focusing on intensifying the mood of the season.</p>
+                        <img class="imgR" width="90%" src="images/stardewimg2.png" alt="An image of the player heading to town in the winter.">
+                        <div class="demo">
+                            <audio id="demo2" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(1);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(1);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(1);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <img class="imgL" width="90%" src="images/stardewimg3.png" alt="An image of the player mining a rock.">
+                        <p class="bodyRight">Outside of the morning songs that play, songs also play for various other purposes throughout the game. Activities such as mining, visiting unique locations, and socializing all have unique music tracks that play in the background, serving to make each of these tasks more enjoyable. One notable track plays while the player is in an ice-themed section of the mines, and establishes a consistent pulse that aligns well with the speed of the player’s pickaxe, and a simple melody that improves the theming of the area. Especially in areas like the mines, these tracks may not play as soon as the player enters those areas, and there may be dead space in between the different tracks to let the ambience in the background show through, giving a more realistic sound as opposed to immediately looping the song or starting the next track once the previous one ends.</p>
+                        <div class="demo">
+                            <audio id="demo3" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(2);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(2);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(2);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">Even though having engaging and good-sounding music is essential to creating a positive player experience, timing that music well and giving space for other sounds to show through is also very important. In the case of Stardew Valley, this timing helps to turn otherwise slow and boring tasks into something that the player looks forward to doing.</p>
+                        <br>
+                        <p class="bodyCenter" id="credits">Stardew Valley ©2016 ConcernedApe</p>
+                    </div> 
+                </div>
+            </div>
+        </section>
+        <nav id="iconGrid">
+            <a href="index.html">
+                <img src="images/home.png" alt="Home icon">
+                <p>Home</p>
+            </a>
+            <a href="undertale.html">
+                <img src="images/undertale.png" alt="Undertale icon">
+                <p>Undertale</p>
+            </a>
+            <a href="celeste.html">
+                <img src="images/celeste.png" alt="Celeste icon">
+                <p>Celeste</p>
+            </a>
+            <a href="stardewvalley.html">
+                <img src="images/stardewvalley.png" alt="Stardew Valley icon">
+                <p>Stardew Valley</p>
+            </a>
+            <a href="minecraft.html">
+                <img src="images/minecraft.png" alt="Minecraft icon">
+                <p>Minecraft</p>
+            </a>
+            <a href="balatro.html">
+                <img src="images/balatro.png" alt="Balatro icon">
+                <p>Balatro</p>
+            </a>
+        </nav>
+    </main>
+    <footer>
+        <nav id="bottomNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="undertale.html">Undertale</a></li>
+                <li><a href="celeste.html">Celeste</a></li>
+                <li><a href="stardewvalley.html">Stardew Valley</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="balatro.html">Balatro</a></li>
+            </ul>
+        </nav>
+        <p>All content ©2025 Malachi Henson, except where stated otherwise.</p>
+        
+    </footer>
+</body>
+<script src="scripts/boxmove.js"></script>
+<script src="scripts/demoplayer.js"></script>
+</html>

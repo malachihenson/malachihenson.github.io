@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malachi Henson</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Lacquer&family=Libre+Barcode+128&family=Reenie+Beanie&display=swap');
+        html {
+            background-image: url("img/home/paperBg.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100vw 100vh;
+        }
+        ul {
+            list-style-type: none;
+            margin-left: -25px;
+        }
+        li {
+            margin: 15px auto;
+            text-align: center;
+        }
+        a {
+            color: black;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #wrapper {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: 350px 600px;
+        }
+        #welcome {
+            background-image: url("img/home/paper.webp");
+            background-repeat: no-repeat;
+            background-size: auto 250px;
+            height: 250px;
+            padding-top: 100px;
+            padding-left: 150px;
+            font-family: "Bitcount Single", system-ui;
+            color: rgb(163, 45, 45);
+            font-size: 70px;
+            font-weight: 400;
+        }
+        #about {
+            background-image: url("img/home/paper2.webp");
+            background-repeat: no-repeat;
+            background-size: auto 500px;
+            height: 500px;
+            filter: brightness(95%);
+            font-family: "Reenie Beanie", cursive;
+            font-size: 25px;
+        }
+        #about h2 {
+            padding-top: 25px;
+            padding-left: 200px;
+        }
+        #lowerArea {
+            display: flex;
+            flex-direction: row;
+        }
+        #lowerArea p {
+            width: 200px;
+            padding-left: 100px;
+            padding-top: 0px;
+            line-height: 1.25;
+        }
+        #lowerArea img {
+            width: 200px;
+            height: 266px;
+            margin-left: 25px;
+            transform: rotate(2deg);
+        }
+        #navigation {
+            grid-row: 1 / span 2;
+            grid-column: 2;
+            background-image: url("img/home/cardboard.png");
+            background-repeat: no-repeat;
+            background-size: 450px auto;
+            background-position: center;
+            height: 80vh;
+            min-height: 600px;
+            font-family: "Lacquer", system-ui;
+            font-size: 50px;
+            font-weight: bold;
+            width: 450px;
+            margin-top: 100px;
+            padding-top: 50px;
+        }
+        #barcode {
+            font-family: "Libre Barcode 128", system-ui;
+            font-size: 37px;
+            margin-top:150px;
+        }
+        @media screen and (max-width: 1150px) {
+            #wrapper {
+                width: 90%;
+                display: block;
+            }
+            #navigation {
+                margin-top: 0;
+            }
+            #navigation, #welcome, #about {
+                width: 100%;
+                margin: auto;
+            }
+        }
+        @media screen and (max-width: 650px) {
+            #lowerArea img {
+                display: none;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="wrapper">
+        <div id="welcomeContainer">
+            <h1 id="welcome">Hello!</h1>
+        </div>
+        <div id="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="links.html">Links</a></li>
+                <li><a href="about.html">About</a></li>
+                <li id="barcode">password is O`wBRSu&</li>
+            </ul>
+        </div>
+        <div id="about">
+            <h2>Welcome to my website!</h2>
+            <div id="lowerArea">
+                <p>I'm Malachi Henson, but I go by DoubleSharp on some parts of the Internet. I upload anything that I think is important or cool here.</p>
+                <img src="img/home/me.jpg">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

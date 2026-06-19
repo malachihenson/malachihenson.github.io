@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Your Luck</title>
+        <style>
+            @font-face {
+                font-family: font1;
+                font-style: normal;
+                font-weight: 400;
+                src: url(Nunito-Regular.ttf);
+            }
+            body {
+                font-family: font1;
+            }
+            .header {
+                text-align: center;
+                font-size: 75px;
+                margin: 10px 25px;
+            }
+            .subheader {
+                text-align: center;
+                font-size: 50px;
+                margin: 10px 25px;
+            }
+            .startButton {
+                width: 20%;
+                margin: 0 auto;
+                font-size: 40px;
+                text-align: center;
+                border: 3px solid #000;
+                margin-top: 3%;
+            }
+            #oddsTop, #bestOdds, #sLabel {
+                font-size: 25px;
+                text-align: center;
+            }
+            #red {
+                background-color: #F00;
+                margin-left: 10%;
+            }
+            #blue {
+                background-color: #00F;
+            }
+            #choice {
+                width: 80%;
+                margin: auto;
+                height: 40%;
+            }
+            #ssContainer {
+                width: 50%;
+                margin: auto;
+            }
+            #speedSlider {
+                width: 100%;
+            }
+            .option {
+                display: inline-block;
+                width: 40%;
+                text-align: center;
+            }
+            #attrib {
+                text-align: right;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="startMenu">
+            <h1 class="header">Are You One in a Million?</h1>
+            <h1 class="subheader">Test your luck and find out</h1>
+            <br>
+            <div class="startButton" onclick="start();">
+                <p class="startText">Start</p>
+            </div>
+            <div class="startButton" onclick="startBot();">
+                <p class="startText">Auto-Play</p>
+            </div>
+            <p id="attrib">By <a href="index.html">Malachi</a><br>Insipired by <a href="https://www.youtube.com/@CGPGrey">CGP Grey</a></p>
+        </div>
+        <div id="game">
+            <p id="oddsTop">1 in 1</p>
+            <br>
+            <h1 class="header">Red or Blue?</h1>
+            <br>
+            <div id="choice">
+                <div class="option" id="red" onclick="choose(0)">
+                    <h1>Red</h1>
+                </div>
+                <div class="option" id="blue" onclick="choose(1)">
+                    <h1>Blue</h1>
+                </div>
+            </div>
+            <br>
+            <br>
+            <p id="bestOdds">Best: 1 in 1</p>
+            <br>
+            <br>
+            <div id="ssContainer">
+                <p id="sLabel">Adjust Speed</p>
+                <input type="range" min="1" max="500" value="250" id="speedSlider">
+            </div>
+        </div>
+        <div id="gameOver">
+            <h1 class="header">Game Over</h1>
+            <h1 class="subheader">Try Again?</h1>
+            <br>
+            <div class="startButton" onclick="start();">
+                <p class="startText">Retry</p>
+            </div>
+        </div>
+        <div id="congrats">
+            <h1 class="header">Congratulations!</h1>
+            <h1 class="subheader">You are one in a million!</h1>
+        </div>
+    </body>
+    <script>
+        var startMenu = document.getElementById("startMenu");
+        var game = document.getElementById("game");
+        var oddsTop = document.getElementById("oddsTop");
+        var gameOver = document.getElementById("gameOver");
+        var bestOdds = document.getElementById("bestOdds");
+        var speedSlider = document.getElementById("speedSlider");
+        var ssContainer = document.getElementById("ssContainer");
+        var congrats = document.getElementById("congrats");
+
+        var odds = 1;
+        var bestOddsNum = 1;
+        var choice = 0;
+        var botChoice = 0;
+
+        var bot = false;
+
+        game.style.display = "none";
+        gameOver.style.display = "none";
+        ssContainer.style.display = "none";
+        congrats.style.display = "none";
+
+        function start() {
+            gameOver.style.display = "none";
+            startMenu.style.display = "none";
+            game.style.display = "block";
+            choice = Math.round(Math.random());
+        }
+        function startBot() {
+            gameOver.style.display = "none";
+            startMenu.style.display = "none";
+            game.style.display = "block";
+            ssContainer.style.display = "block";
+            choice = Math.round(Math.random());
+            bot = true;
+            botLoop();
+        }
+        function choose(type) {
+            if(type == choice) {
+                odds = odds * 2;
+                choice = Math.round(Math.random());
+                oddsTop.innerHTML = odds + " in 1";
+                if(odds > bestOddsNum) {
+                    bestOddsNum = odds;
+                    bestOdds.innerHTML = "Best: " + odds + " in 1";
+                }
+                if(odds > 1000000) {
+                    game.style.display = "none";
+                    congrats.style.display = "block";
+                }
+            } else {
+                if(!bot) {
+                    gameOver.style.display = "block";
+                    game.style.display = "none";
+                }
+                odds = 1;
+                oddsTop.innerHTML = odds + " in 1";
+            }
+        }
+        function botLoop() {
+            botChoice = Math.round(Math.random());
+            choose(botChoice);
+            setTimeout(botLoop, (500-speedSlider.value));
+        }
+    </script>
+</html>

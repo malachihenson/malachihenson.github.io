@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> ._. </title>
+        <link rel="stylesheet" href="global.css">
+        <style>
+            #tinyText {
+                font-size: 0.5em;
+            }
+            #modal1 {
+                display: none;
+                position: fixed;
+                z-index: 1; 
+                left: 0;
+                top: 0;
+                width: 100%; 
+                height: 100%;
+                overflow: hidden;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0,0.6); 
+            }
+            #modal1Content {
+                background-color: #fefefe;
+                margin: 15% auto; 
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%; 
+            }
+            #guy {
+                border: 2px solid black;
+                
+            }
+            #modal1Text {
+                font-size: 2em;
+                display: inline-block;
+                vertical-align: top;
+                padding-left: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Home</a> | 
+            <a href="games.html">Games</a> | 
+            <a href="tools.html">Tools</a> | 
+            <a href="broken.html">Broken Stuff</a> | 
+            <a href="upcoming.html">Upcoming Projects</a> | 
+            <a href="other.html">Other Stuff</a>
+        </nav>
+        <br>
+        <h1 class="header">Home</h1>
+        <br>
+        <h3 class="subheader">Welcome to the website. Enjoy all the random stuff you never wanted here.</h3>
+        <p>But be careful...</p>
+        <p>Don't dig too deep...</p>
+        <p id="tinyText">I don't think you want to see what's down there.</p>
+        <br>
+        <br>
+        <br>
+        <h1 class="header" onclick="openBasement();">._.</h1>
+        <br>
+        <div id="modal1" onclick="openBasement();">
+            <div id="modal1Content">
+                <img src="guy1.svg" width="100" height="100" id="guy">
+                <p id="modal1Text">Test...</p>
+            </div>
+        </div>
+    </body>
+    <script>
+        var modal1 = document.getElementById("modal1");
+        var modal1Text = document.getElementById("modal1Text");
+        var guy = document.getElementById("guy");
+        var textLoop1 = 1;
+        var textLoop2 = 1;
+        modal1.style.display = "none";
+        localStorage.setItem("pizzas", 0);
+        function openBasement() {
+            modal1.style.display = "block";
+            if(localStorage.getItem("pizzas") == 0 || localStorage.getItem("pizzas") == null) {
+                localStorage.setItem("pizzas", 0);
+                switch(textLoop1) {
+                    case 1:
+                    say(1, "You really shouldn't go down there...");
+                    textLoop1++;
+                    break;
+                    case 2:
+                    say(2, "I am really hungry though...");
+                    textLoop1++;
+                    break;
+                    case 3:
+                    say(3, "The developer won't give me anything but salad. He says that it's good for me.")
+                    textLoop1++;
+                    break;
+                    case 4:
+                    textLoop1++;
+                    say(4, "You could bring me some pizza, though. 5 should be enough.");
+                    break;
+                    case 5: 
+                    say(1, "...");
+                    textLoop1++;
+                    break;
+                    case 6:
+                    modal1.style.display = "none";
+                    textLoop1 = 1;
+                    break;
+                }
+            } else if(localStorage.getItem("pizzas") < 5) {
+                if(textLoop2 == 1) {
+                    say(1, "Good job, only " + (5 - (localStorage.getItem("pizzas"))) + " pizzas left to go.");
+                    textLoop2++;
+                } else if(textLoop2 == 2) {
+                    say(1, "...");
+                    textLoop2++;
+                } else {
+                    modal1.style.display = "none";
+                    textLoop2 = 1;
+                }
+            } else {
+
+            }
+        }
+        function say(type, message) {
+            guy.src="guy" + type.toString() + ".svg";
+            modal1Text.innerHTML = message;
+        }
+    </script>
+</html>

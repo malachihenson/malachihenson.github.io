@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=WDXL+Lubrifont+SC&display=swap');
+        html {
+            background-color: #edcf0e;
+        }
+        body {
+            font-family: "Google Sans", sans-serif;
+        }
+        img {
+            float: left;
+        }
+        #pHeader {
+            font-family: "WDXL Lubrifont SC", sans-serif;
+            font-size: 60px;
+            background-color: white;
+            width: 250px;
+            text-align: center;
+            padding: 10px 20px;
+            box-shadow: 10px 10px #EDEDED;
+        }
+        #wrapper {
+            width: 80%;
+            margin: auto;
+        }
+        #homeLink {
+            font-size: 30px;
+            color: black;
+            text-align: center;
+            background-color: white;
+            padding: 10px 20px;
+            box-shadow: 10px 10px #EDEDED;
+            height:50px;
+        }
+        #homeLink:hover {
+            text-decoration: underline;
+        }
+        #topBar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #menu {
+            display: flex;
+            margin-top: 75px;
+        }
+        #filterBox {
+            width: 30%;
+            background-color: white;
+            box-shadow: 10px 10px #EDEDED;
+            text-align: center;
+            min-height: 50px;
+            max-height: 400px;
+        }
+        #closeBox {
+            background-color: #EDEDED;
+            font-size: 15px;
+            padding: 7px;
+            margin: 7px 15px;
+            margin-bottom: 0;
+            border-radius: 20px;
+            float: right;
+            user-select: none;
+        }
+        #closeBox:hover {
+            background-color: #dadada;
+        }
+        #filterBox h2 {
+            font-weight: 300;
+            font-size: 30px;
+        }
+        #filterBox input {
+            margin-right: 10px;
+        }
+        #filterSubmit {
+            margin-left: 0;
+            background-color: #EDEDED;
+            font-size: 15px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            border: none;
+            font-family: "Google Sans", sans-serif;
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        #filterSubmit:hover {
+            background-color: #dadada;
+        }
+        #filterContent {
+            margin-bottom: 100px;
+        }
+        #content {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: repeat(4, 230px);
+            align-items: center;
+            margin-left: 50px;
+            margin-top: -100px;
+        }
+        .project {
+            margin: 30px;
+            background-color: white;
+            box-shadow: 10px 10px #EDEDED;
+            padding: 20px 5px;
+        }
+        .projectText {
+            color: black;
+            margin-left: 30px;
+            text-align: center;
+        }
+        a {
+            text-decoration: none;
+        }
+        #warning {
+            grid-column: 1 / span 2;
+            text-align: center;
+            background-color: white;
+            box-shadow: 10px 10px #EDEDED;
+            padding: 30px 0;
+            width: 95%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="topBar">
+            <h1 id="pHeader">Projects</h1>
+            <a href="index.html" id="homeLink">Home</a>
+        </div>
+        <!--All search and storage will be client-side for now because of the deadline-->
+        <div id="menu">
+            <div id="filterBox">
+                <!--<span id="closeBox" onclick="toggleBox();">Close</span>-->
+                <div id="filterContent">
+                    <br>
+                    <h2>Filter by Type</h2>
+                    <p class="filterCheck"><input id="webCheck" type="checkbox" checked>Web Page</p>
+                    <p class="filterCheck"><input id="gameCheck" type="checkbox" checked>Game</p>
+                    <p class="filterCheck"><input id="musicCheck" type="checkbox" checked>Music</p>
+                    <p class="filterCheck"><input id="otherCheck" type="checkbox" checked>Other</p>
+                    <input type="button" onclick="updateFilters();" value="Filter" id="filterSubmit">
+                </div>
+            </div>
+            <div id="content">
+                <h1 id="warning">Warning: These sites do not link back to the original page. Be careful.</h1>
+                <div class="project">
+                    <a href="projects/prime/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>Prime Challenge</h2>
+                            <p>Inspired by a YouTube video I saw a while ago.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="projects/tib/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>The Invisible Bank</h2>
+                            <p>Created as a joke for my friends.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="projects/igmt/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>Indie Game Music Theory</h2>
+                            <p>A school project. There originally was a complete build of this site, but I can't find it, so this is unfinished.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="projects/rickroll/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>Schoology Error Page Replica</h2>
+                            <p>I made this to prank my friends.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="projects/webold1/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>Old Personal Site #1</h2>
+                            <p>My most recent attempt at a personal website.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="projects/webold2/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>Old Personal Site #2</h2>
+                            <p>My oldest surviving personal website.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var webCheck = document.getElementById("webCheck");
+    var gameCheck = document.getElementById("gameCheck");
+    var musicCheck = document.getElementById("musicCheck");
+    var otherCheck = document.getElementById("otherCheck");
+    var projects = document.getElementsByClassName("project");
+    var tags = [1, 0, 0, 0, 0, 0];
+
+    function updateFilters() {
+        if(!webCheck.checked && !gameCheck.checked && !musicCheck.checked && !otherCheck.checked) {
+            alert("Please include at least 1 category in your filter!");
+            return;
+        }
+        for(var i=0; i < projects.length; i++) {
+            switch(tags[i]) {
+                case 0:
+                    if(webCheck.checked) {
+                        projects[i].style.display = "block";
+                    } else {
+                        projects[i].style.display = "none";
+                    }
+                    break;
+                case 1:
+                    if(gameCheck.checked) {
+                        projects[i].style.display = "block";
+                    } else {
+                        projects[i].style.display = "none";
+                    }
+                    break;
+                case 2:
+                    if(musicCheck.checked) {
+                        projects[i].style.display = "block";
+                    } else {
+                        projects[i].style.display = "none";
+                    }
+                    break;
+                case 3:
+                    if(otherCheck.checked) {
+                        projects[i].style.display = "block";
+                    } else {
+                        projects[i].style.display = "none";
+                    }
+                    break;
+            }
+        }
+    }
+    //not implemented currently
+    var filterContent = document.getElementById("filterContent");
+    var closeBox = document.getElementById("closeBox");
+    var boxOpen = true;
+    function toggleBox() {
+        if(boxOpen) {
+            filterContent.style.display = "none";
+            closeBox.innerHTML = "Open";
+            boxOpen = false;
+        } else {
+            filterContent.style.display = "block";
+            closeBox.innerHTML = "Close";
+            boxOpen = true;
+        }
+    } 
+</script>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="minecraft, c418, ambient, genre, tempo, chord, ostinato, creativity, nostalgia, inspiration">
+    <meta name="description" content="Minecraft’s music is extremely influential, having helped to define the ambient genre as a whole. It aids in the game’s creative experience by giving a slow tempo with simple melodies.">
+    <title>Indie Game Music Theory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .box, .deco-top {
+            width: 80%;
+            min-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="IGMT Logo" id="logo">
+        <div id="headerFlex">
+            <a href="index.html"><h1>Indie Game Music Theory v0.1 alpha</h1></a>
+            <h1 id="clock">23:46</h1>
+        </div>
+        <style>
+            .box {
+                width: 80%;
+                min-width: 400px;
+            }
+
+        </style>
+    </header>
+    <main>
+        <section class="box" id="mainBox">
+            <div class="deco-top" id="mainTop">
+                <p>minecraft.exe</p>
+                <button id="closeBtn" onclick="closeWindow();">
+                    <img src="images/close1.png" width="75%">
+                </button>
+            </div>
+            <div class="box-body">
+                <div class="box-container">
+                    <h1>Minecraft</h1>
+                    <h2>Inspiring Creativity with Ambience</h2>   
+                    <div class="content-grid">
+                        <p class="bodyLeft">Few video game tracks have influenced an entire genre of music as much as Minecraft has done for the ambient music genre. And while Minecraft may have grown out of its indie game phase today, the iconic music that makes up so much of its identity as a game is very much from a time when it was one. Since Minecraft is such an open-ended game, it makes sense that the game’s soundtrack would be similarly laid-back. However, Minecraft’s music is distinct from other ambient music artists at the time, such as Brian Eno and Aphex Twin, in that there is significantly more empty space between notes and musical ideas. While most ambient artists filled up the background of their songs with pads, C418, the composer of Minecraft’s early music, let the silence show through, using relatively few instruments (usually around 3-5). And while most ambient music hangs out around 50-80 BPM, which is already very slow for most music, Minecraft’s music occasionally dips into the 30s and 40s. One of Minecraft’s most iconic tracks, for example, sits at 42 BPM.</p>
+                        <img class="imgR" width="90%" src="images/minecraftimg1.jpg" alt="A screenshot of Minecraft's PS4 cover art.">
+                        <div class="demo">
+                            <audio id="demo1" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(0);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(0);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(0);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">As mentioned before, in a game where the world is infinite and the possibilities are limitless for what you can create, the music cannot be particularly intense, necessitating very simple music, even for the ambient genre. The complete control the player has over the game also means that there cannot be many specifically themed tracks at the risk of sounding out of place. Because of this, many of the game’s songs may remain on the same chord or chord sequence. For example, one track sticks to a Cmaj7 chord, consisting of only 4 notes, for its entire runtime, layering a simple background pattern made of the same chord and a melody that sticks to short intervals on the same scale.</p>
+                        <div class="demo">
+                            <audio id="demo2" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(1);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(1);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(1);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <img class="imgL" width="90%" src="images/minecraftimg2.jpg" alt="An image of the Minecraft creative menu, showing the variety of blocks available.">
+                        <p class="bodyRight">While Minecraft does tend to focus somewhat on fighting and exploring in its Survival mode, Minecraft also features a Creative mode, where the player is given flight, invincibility, and infinite resources to be able to build whatever they want. The game has a set of tracks that only play in this mode, and many of them follow the same formula that the last two tracks shown. One in particular highlights this expanded creativity by laying down a Amin7 ostinato that repeats while an synth plays a somewhat sparse melody. Most of Minecraft’s tracks, especially the Survival tracks, have a major key, so this track stands out, being in E minor. This difference, along with the slightly different style, helps to highlight the game’s most creative mode (hence the name).</p>
+                        <div class="demo">
+                            <audio id="demo3" class="demoA">
+                                <source src="audio/balatro1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/balatro1.png" width="100%" class="demoImage" alt="A transcription of the opening measures of Balatro's main theme.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(2);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(2);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(2);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">Early measures in the song.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">There isn’t much to be said about Minecraft that already hasn’t been said countless times by many others, and the quality of its music is no exception. There are very few games with soundtracks that induce pure nostalgia in players, even those who haven’t played the game, and there are even less games that have defined a musical space as much as Minecraft has. Despite how the game stands today, an essential part of Minecraft’s legacy will be in its early music.</p>
+                        <br>
+                        <p class="bodyCenter" id="credits">Minecraft ©2011 Mojang</p>
+                    </div>                
+                </div>
+            </div>
+        </section>
+        <nav id="iconGrid">
+            <a href="index.html">
+                <img src="images/home.png" alt="Home icon">
+                <p>Home</p>
+            </a>
+            <a href="undertale.html">
+                <img src="images/undertale.png" alt="Undertale icon">
+                <p>Undertale</p>
+            </a>
+            <a href="celeste.html">
+                <img src="images/celeste.png" alt="Celeste icon">
+                <p>Celeste</p>
+            </a>
+            <a href="stardewvalley.html">
+                <img src="images/stardewvalley.png" alt="Stardew Valley icon">
+                <p>Stardew Valley</p>
+            </a>
+            <a href="minecraft.html">
+                <img src="images/minecraft.png" alt="Minecraft icon">
+                <p>Minecraft</p>
+            </a>
+            <a href="balatro.html">
+                <img src="images/balatro.png" alt="Balatro icon">
+                <p>Balatro</p>
+            </a>
+        </nav>
+    </main>
+    <footer>
+        <nav id="bottomNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="undertale.html">Undertale</a></li>
+                <li><a href="celeste.html">Celeste</a></li>
+                <li><a href="stardewvalley.html">Stardew Valley</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="balatro.html">Balatro</a></li>
+            </ul>
+        </nav>
+        <p>All content ©2025 Malachi Henson, except where stated otherwise.</p>
+        
+    </footer>
+</body>
+<script src="scripts/boxmove.js"></script>
+<script src="scripts/demoplayer.js"></script>
+</html>

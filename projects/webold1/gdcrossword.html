@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geometry Dash Crossword</title>
+        <style>
+            @font-face {
+                font-family: font1;
+                font-style: normal;
+                font-weight: 200;
+                src: url(Pusab-Regular.otf);
+            }
+            body {
+                font-family: font1;
+            }
+            td {
+                width: 50px;
+                height: 50px;
+                text-align: center;
+            }
+            .square {
+                border: 3px solid #000;
+                width: 40px;
+                height: 40px;
+                margin: 0;
+            }
+            ol {
+                font-size: 20px;
+            }
+            #logo {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 1;
+            }
+            #nums {
+                z-index: 1;
+            }
+            #thething, #nums {
+                position: absolute;
+                top: 40%;
+                left: 15%;
+                
+                transform: rotate(-45deg);
+            }
+            #thething {
+                background-color: #FFF;
+                z-index: 2;
+            }
+            #crossword, #clues {
+                display: inline-block;
+            }
+            #crossword {
+                width: 55%;
+            }
+            #clues {
+                width: 40%;
+            }
+            #timer {
+                text-align: center;
+                font-size: 50px;
+            }
+            #clues > div {
+                display: inline-block;
+                padding: 0 20px;
+            }
+            #clueContainer {
+                width: 100%;
+            }
+            #checkButton {
+                width: 100%;
+                height: 50px;
+                font-family: font1;
+                font-size: 30px;
+                background-color: #FFF;
+                border-radius: 5px;
+            }
+            #bContainer {
+                width: 80%;
+                margin: 5% auto;
+            }
+            .inp {
+                border: none;
+                width: 40px;
+                height: 40px;
+                font-size: 40px;
+                font-family: font1;
+                text-align: center;
+            }
+            .block {
+                background-color: #000;
+            }
+            .clueHeader {
+                font-size: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="crossword">
+            <img src="gdlogo.png" id="logo">
+            <table id="thething">
+                <tr>
+                    <td class="square"><input type="text" id="t11" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t12" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t13" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t14" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t15" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t16" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t17" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t18" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t21" class="inp" maxlength="1"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="square"><input type="text" id="t24" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t25" class="inp" maxlength="1"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="square"><input type="text" id="t28" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t31" class="inp" maxlength="1"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="square"><input type="text" id="t34" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t35" class="inp" maxlength="1"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="square"><input type="text" id="t38" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t41" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t42" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t43" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t44" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t45" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t46" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t47" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t48" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t51" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t52" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t53" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t54" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t55" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t56" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t57" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t58" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t61" class="inp" maxlength="1"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="square"><input type="text" id="t68" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t71" class="inp" maxlength="1"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="block"></td>
+                    <td class="square"><input type="text" id="t78" class="inp" maxlength="1"></td>
+                </tr>
+                <tr>
+                    <td class="square"><input type="text" id="t81" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t82" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t83" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t84" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t85" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t86" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t87" class="inp" maxlength="1"></td>
+                    <td class="square"><input type="text" id="t88" class="inp" maxlength="1"></td>
+                </tr>
+            </table>
+        </div>
+        <div id="clues">
+            <h1 id="timer">0:00</h1>
+            <br>
+                <div id="across">
+                    <h1 class="clueHeader">Across</h1>
+                    <br>
+                    <ol>
+                        <li>The 1st level of the Bonus Gauntlet.</li>
+                        <li>EnZore's epic easy demon collab with kurokawa.</li>
+                        <li>________ birthday, a 2014 level released by Experience D.</li>
+                        <li>Darnoc's remake of xStep.</li>
+                        <li>One of Lfritz's 2 rated extreme demons.</li>
+                    </ol>
+                </div>
+                <div id="down">
+                    <h1 class="clueHeader">Down</h1>
+                    <br>
+                    <ol>
+                        <li>The last level in DavJT's circus-themed series</li>
+                        <li>Unzor's level about a certain object in the solar system</li>
+                        <li>____hook, a level by a creator known for his Terraria-themed levels.</li>
+                        <li>Pennutoh's collab remixing the most popular extreme demon.</li>
+                    </ol>
+                </div>
+            <p>Created by <a href="index.html">Malachi</a></p>
+        </div>
+        <div id="bContainer">
+            <input type="button" value="Check" id="checkButton" onclick="check();">
+        </div>
+    </body>
+    <script>
+        var timer = document.getElementById("timer");
+        var inps = document.getElementsByClassName("inp");
+
+        var checked = "";
+
+        var timeElapsed = 0;
+
+        var completed = false;
+
+        setTimeout(updateTime, 1000);
+
+        function updateTime() {
+            if(!completed) {
+                timeElapsed++;
+                if(timeElapsed % 60 < 10) {
+                    timer.innerHTML = (Math.floor(timeElapsed/60)).toString() + ":0" + (timeElapsed % 60);
+                } else {
+                    timer.innerHTML = (Math.floor(timeElapsed/60)).toString() + ":" + (timeElapsed % 60);
+                }
+                setTimeout(updateTime, 1000);
+            }
+        }
+        function check() {
+            for(var i=0; i<inps.length; i++) {
+                checked = checked + inps[i].value;
+            }
+            //this is the best part
+            if(checked == "chambersreauaatnzenthicsystepyuhiiinipromise") {
+                alert("Congratulations! You finished the crossword in "+timer.innerHTML+"!");
+                completed = true;
+            } else {
+                alert("Sorry, it looks like one or more squares are incorrect. Try again.");
+            }
+            checked = "";
+        }
+    </script>
+</html>

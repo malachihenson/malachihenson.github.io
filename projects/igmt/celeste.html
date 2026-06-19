@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="celeste, platformer, salient events, ostinato, ambience, synths, remix, environment, theming, distractions">
+    <meta name="description" content="The platformer game Celeste features music that avoids salient events, or distracting moments in music. This allows players to focus on executing complicated gameplay. ">
+    <title>Indie Game Music Theory</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .box {
+            width: 80%;
+            min-width: 400px;
+        }
+        #clipGrid {
+            display: block;
+            margin: 40px 10%;
+        }
+        .aLeft {
+            grid-column: 1;
+        }
+        .aRight {
+            grid-column: 1
+        }
+        .aCenter {
+            grid-column: 1 / span 1;
+        }
+        @media only screen and (min-width: 1200px) {
+            #clipGrid {
+                display: grid;
+                grid-template-columns: 1fr 1fr;   
+            }
+            .aLeft {
+                grid-column: 1;
+            }
+            .aRight {
+                grid-column: 2;
+            }
+            .aCenter {
+                grid-column: 1 / span 2;
+            }
+        }
+        #clipGrid div p {
+            width: 80%;
+            margin: auto;
+            font-size: 25px;
+        }
+        audio {
+            margin-bottom: 50px;
+        }
+        </style>
+</head>
+<body>
+    <header>
+        <img src="images/logo.png" alt="IGMT Logo" id="logo">
+        <div id="headerFlex">
+            <a href="index.html"><h1>Indie Game Music Theory v0.1 alpha</h1></a>
+            <h1 id="clock">23:46</h1>
+        </div>
+    </header>
+    <main>
+        <section class="box" id="mainBox">
+            <div class="deco-top" id="mainTop">
+                <p>celeste.exe</p>
+                <button id="closeBtn" onclick="closeWindow();">
+                    <img src="images/close1.png" width="75%">
+                </button>
+            </div>
+            <div class="box-body">
+                <div class="box-container">
+                    <h1>Celeste</h1>
+                    <h2>Building Intense Theming Without Creating Distractions</h2>   
+                    <div class="content-grid">
+                        <img src="images/celesteimg1.png" width="90%" class="imgL" alt="An image of the final room of Celeste Chapter 7's C-side.">
+                        <p class="bodyRight">Like many platformer games in the indie space, Celeste becomes very mechanically complicated very quickly. Players have to devote significant concentration to moving the character in the correct way across the stage, and any distractions only serve to remove the player from the flow state that they enter in. Because of this, Celeste’s soundtrack attempts to avoid creating any sounds that might disrupt the player.</p>
+                        <p class="bodyLeft">These distracting sounds, or salient events, serve an important role in most music: they draw in the listener’s attention and keep them engaged. While this serves listeners well in most genres, the Celeste soundtrack is meant to allow players to disengage from auditory processing, which it accomplishes in a few ways. One of the most simple ways that it does this is through an ostinato - a repeating pattern that often overlays other musical ideas. However, in the Celeste soundtrack, ostinatos are often the focus. In the third chapter of the game, the player is tasked with escaping a run-down hotel run by a ghost with significant emotional baggage. The soundtrack in this area accurately expresses the tension of the situation while still remaining minimal by constructing an ostinato of diminished chords, which have a tension that provides significant atmosphere to the track.</p>
+                        <img src="images/celesteimg2.png" width="90%" class="imgR" alt="An image of a room in Chapter 3.">
+                        <div class="demo">
+                            <audio id="demo1" class="demoA">
+                                <source src="audio/celeste1.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/celeste1.png" width="100%" class="demoImage" alt="A partial transcription of Scattered and Lost">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(0);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(0);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(0);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">One of the more intense parts of Scattered and Lost.</p>
+                            </div>
+                        </div>
+                        <img src="images/celesteimg3.png" width="90%" class="imgL" alt="An image of a room in Chapter 4's B-side.">
+                        <p class="bodyRight">While using an ostinato is definitely one of the most common ways that Celeste avoids distractions, another method used often is pure ambience. In some areas, where the game environment is more relaxed (even when the gameplay difficulty is the opposite), the game opts to let musical ideas progress slowly and sit with the listener for much longer than normal. Once the player completes each chapter in Celeste, they are given the opportunity to complete a more difficult version of the chapter, named its “B-side”. Each B-side offers a remixed version of the soundtrack found in the chapter, and in the case of the fourth chapter, which arguably has the most relaxed environment, the B-side remix progresses in a way that greatly increases the mood of the area.</p>
+                        <div class="demo">
+                            <audio id="demo2" class="demoA">
+                                <source src="audio/celeste2.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/celeste2.png" width="100%" class="demoImage" alt="A partial transcription of Golden Ridge (Golden Feather Remix).">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(1);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(1);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(1);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">The Chapter 4 B-side remix. Note the ostinato on top and the synth on the bottom.</p>
+                            </div>
+                        </div>
+                        <p class="bodyLeft">As much as most of the game does attempt to avoid distracting the player, however, there are some sections where the soundtrack does attempt to intentionally disrupt the player or energize them to a level that distractionless music cannot. One track, heard within the game’s sixth chapter, does both. In the chapter, the player faces off against a manifestation of the parts of herself that she hates, attempting to get her to leave her life. The fight features a significant step up in difficulty from previous sections, both in technical execution and in play style, forcing the player to be significantly more aggressive than they would normally be. To reflect this shift, the music changes to a more energizing style with more salient events, like pulsating vocal tracks and sharp percussive noises.</p>
+                        <img src="images/celesteimg4.png" width="90%" class="imgR" alt="An image of the boss fight in Chapter 6.">
+                        <div class="demo">
+                            <audio id="demo3" class="demoA">
+                                <source src="audio/celeste3.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/celeste3.png" width="100%" class="demoImage" alt="A partial transcription of Confronting Myself">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(2);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(2);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton"  onclick="stopTrack(2);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">The main melody of Confronting Myself.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">In the game’s final chapter, the player is tasked with climbing a mountain that is divided into 6 distinct sections, each representing a section of the game that was played previously except for the final section, which serves as new content. During this entire chapter, only one track is played, utilizing many of the techniques previously described, but also incorporating unique sounds for each section that accurately encapsulate the section. These sounds provide a callback that makes the experience of this section much more engaging.</p>
+                        <div id="clipGrid" class="bodyCenter">
+                            <div class="aLeft">
+                                <h3>Chapter 1: Forsaken City</h3>
+                                <audio controls>
+                                    <source src="audio/summitc1.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                            </div>
+                            <div class="aRight">
+                                <h3>Chapter 2: Old Site</h3>
+                                <audio controls>
+                                    <source src="audio/summitc2.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                            </div>
+                            <div class="aLeft">
+                                <h3>Chapter 3: Celestial Resort</h3>
+                                <audio controls>
+                                    <source src="audio/summitc3.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                            </div>
+                            <div class="aRight">
+                                <h3>Chapter 4: Golden Ridge</h3>
+                                <audio controls>
+                                    <source src="audio/summitc4.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                            </div>
+                            <div class="aLeft">
+                                <h3>Chapter 5: Mirror Temple</h3>
+                                <audio controls>
+                                    <source src="audio/summitc5.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                            </div>
+                            <div class="aRight">
+                                <h3>Chapter 7: The Summit</h3>
+                                <audio controls>
+                                    <source src="audio/summitc7.mp3" type="audio/mp3">
+                                    Your browser does not support audio somehow.
+                                </audio>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">
+                            Note: While technically represented by the first section of the chapter, Chapter 6 is skipped for story reasons and has no thematic elements present.
+                        </p>
+                        <img class="imgL" src="images/celesteimg5.png" width="90%" alt="An image of a room in the Farewell DLC.">
+                        <p class="bodyRight">At the end of game’s free DLC, which is meant to be the true end of the game, there is a room which is significantly longer and harder than anything the player has experienced before. The room has its own track, which intensifies all of the techniques previously demonstrated to the maximum amount possible while still avoiding being distracting. The track successfully increases the already intense emotions that the player is feeling, especially through its use of rich harmonies.</p>
+                        <div class="demo">
+                            <audio id="demo4" class="demoA">
+                                <source src="audio/celeste4.mp3" type="audio/mp3">
+                            </audio>
+                            <div class="demoBox">
+                                <div class="demoIndicator"></div>
+                                <img src="images/scores/celeste4.png" width="100%" class="demoImage" alt="A partial transcription of Farewell.">
+                            </div>
+                            <div class="demoBottom">
+                                <div class="demoButtons">
+                                    <button class="demoButton playButton" onclick="playTrack(3);">
+                                        <img src="images/play1.png" alt="Play Button">
+                                    </button>
+                                    <button class="demoButton pauseButton" onclick="pauseTrack(3);">
+                                        <img src="images/pause1.png" alt="Pause Button">
+                                    </button>
+                                    <button class="demoButton stopButton" onclick="stopTrack(3);">
+                                        <img src="images/stop1.png" alt="Stop Button">
+                                    </button>
+                                </div>
+                                <p class="demoCaption">The climax of Farewell, coupled with the climax of the entire game.</p>
+                            </div>
+                        </div>
+                        <p class="bodyCenter">What Celeste may lack in terms of the depth of its story, it more than makes up for it in terms of its thorough and emotion-invoking theming, especially in its music. While still avoiding being excessively distracting, it manages to highlight its gameplay in a way that makes the user experience so much more endearing.</p>
+                        <br>
+                        <p class="bodyCenter" id="credits">Celeste ©2018 Maddy Makes Games, Inc.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <nav id="iconGrid">
+            <a href="index.html">
+                <img src="images/home.png" alt="Home icon">
+                <p>Home</p>
+            </a>
+            <a href="undertale.html">
+                <img src="images/undertale.png" alt="Undertale icon">
+                <p>Undertale</p>
+            </a>
+            <a href="celeste.html">
+                <img src="images/celeste.png" alt="Celeste icon">
+                <p>Celeste</p>
+            </a>
+            <a href="stardewvalley.html">
+                <img src="images/stardewvalley.png" alt="Stardew Valley icon">
+                <p>Stardew Valley</p>
+            </a>
+            <a href="minecraft.html">
+                <img src="images/minecraft.png" alt="Minecraft icon">
+                <p>Minecraft</p>
+            </a>
+            <a href="balatro.html">
+                <img src="images/balatro.png" alt="Balatro icon">
+                <p>Balatro</p>
+            </a>
+        </nav>
+    </main>
+    <footer>
+        <nav id="bottomNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="undertale.html">Undertale</a></li>
+                <li><a href="celeste.html">Celeste</a></li>
+                <li><a href="stardewvalley.html">Stardew Valley</a></li>
+                <li><a href="minecraft.html">Minecraft</a></li>
+                <li><a href="balatro.html">Balatro</a></li>
+            </ul>
+        </nav>
+        <p>All content ©2025 Malachi Henson, except where stated otherwise.</p>
+        
+    </footer>
+</body>
+<script src="scripts/boxmove.js"></script>
+<script src="scripts/demoplayer.js"></script>
+</html>
