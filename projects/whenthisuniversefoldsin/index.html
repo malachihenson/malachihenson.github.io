@@ -4,8 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Access Only</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lacquer&display=swap');
+        html {
+            background-image: url("card.jpg");
+        }
+        body {
+            font-family: "Lacquer", system-ui;
+            text-align: center;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        h2 {
+            font-size: 30px;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Access Restricted</h1>
+    <h2>This page is password-protected.</h2>
+    <input type="password" id="pass">
+    <br>
+    <br>
+    <button onclick="checkPass();">Submit</button>
 </body>
+<script>
+    //did you really think I was going to leave the password sitting out in the open? well, it actually is :D
+    //md5
+    var hash = "d4dbb783c73ae06a17794ae613e6c632";
+    //same story for the content...
+</script>
 </html>
