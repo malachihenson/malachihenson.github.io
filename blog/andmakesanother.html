@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="js/youreintherightplace.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>hello again!</title>
@@ -36,8 +37,52 @@
 <body>
     <h1>a simple request</h1>
     <br>
-    <p>hello! welcome back to my blog!</p>
+    <p>hello! welcome back to my blog! unfortunately, the site's strange behavior has only increased since my previous post. i had hoped that i could keep it in <span class="thing">check</span>, but it seems like you may occasionally have to take matters into your own hands. i know you're probably not a <span class="thing">developer</span>, but i'm really at a loss here.<br><br>from now on, if you see something unexpected, <em>don't</em> let me know, or else i'll be un<span class="thing">console</span>able for the rest of the week :P<br><br>be careful,<br>malachi</p>
     <br>
     <p><a href="../blog.html">Blog</a> | <a href="../index.html">Home</a></p>
 </body>
+<script>
+    const bd = document.getElementsByTagName("body");
+    const thing = document.getElementsByClassName("thing");
+    var count = 0;
+
+    setTimeout(alter, 8000);
+
+    function alter() {
+        if(count % 3 == 0) {
+            for(i=0;i<thing.length;i++) {
+                thing[i].style.textDecoration = "underline";
+            }
+            setTimeout(reset, Math.floor(Math.random() * 50) + 250);
+        } else {
+            switch(Math.floor(Math.random() * 4)) {
+                case 0:
+                    bd[0].style.fontFamily = "sans-serif";
+                    break;
+                case 1:
+                    bd[0].style.transform = "rotate(0.5deg)";
+                    break;
+                case 2:
+                    bd[0].style.color = "#d3d3d3";
+                    break;
+                case 3:
+                    bd[0].style.letterSpacing = "1px";
+                    break;
+            }
+            setTimeout(reset, Math.floor(Math.random() * 50) + 150);
+        }
+        count++;
+        
+    }
+    function reset() {
+        for(i=0;i<thing.length;i++) {
+            thing[i].style.textDecoration = "none";
+        }
+        bd[0].style.fontFamily = "Google Sans";
+        bd[0].style.transform = "none";
+        bd[0].style.color = "white";
+        bd[0].style.letterSpacing = "normal";
+        setTimeout(alter, Math.floor(Math.random() * 2000) + 3000);
+    }
+</script>
 </html>
