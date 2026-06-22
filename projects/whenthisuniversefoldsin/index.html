@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Private Access Only</title>
+    
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Lacquer&display=swap');
         html {
@@ -73,30 +74,9 @@
     <button onclick="checkPass();">Submit</button>
     <br>
     <div id="help">
-        <p>in a place of corrugation</p>
+        <p>in a distant place of corrugation</p>
         <p>written in a modern script that no man can read</p>
     </div>
 </body>
-<script>
-    const encoder = new TextEncoder();
-    var pass = document.getElementById("pass");
-    var passHash;
-    //did you really think I was going to leave the password sitting out in the open? well, it actually is :D
-    const hash = "d728ef73d054fc8af088806089951c1edfe132675605a0ef609765f46537167b";
-    //same story for the content...
-    //alert(CryptoJS.AES.encrypt("malachihenson.net/blog/andmakesanother.html", "ccJw40oRMAESml+r"));
-    function checkPass() {
-        passHash = generateHash(pass.value);
-        if(passHash == hash) {
-
-        }
-    }
-    async function generateHash(input) {
-        const data = encoder.encode(input);
-        const hashBuffer = await window.crypto.subtle.digest("SHA-256", data);
-        const hashArray = Array.from(new Uint8Array(hashBuffer));
-        const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
-        return hashHex;
-    }
-</script>
+<script src="asyncHelper.js"></script>
 </html>
