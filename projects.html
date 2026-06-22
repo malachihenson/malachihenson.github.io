@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=WDXL+Lubrifont+SC&display=swap');
         html {
@@ -178,6 +179,15 @@
                     </a>
                 </div>
                 <div class="project">
+                    <a href="projects/whenthisuniversefoldsin/index.html">
+                        <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
+                        <div class="projectText">
+                            <h2>Secure Access Portal</h2>
+                            <p>A hash validation test.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="project">
                     <a href="projects/rickroll/index.html">
                         <img src="img/projects/projectThumb/place.jpg" width="100px" height="100px">
                         <div class="projectText">
@@ -214,7 +224,7 @@
     var musicCheck = document.getElementById("musicCheck");
     var otherCheck = document.getElementById("otherCheck");
     var projects = document.getElementsByClassName("project");
-    var tags = [1, 0, 0, 0, 0, 0];
+    var tags = [1, 0, 0, 0, 0, 0, 3];
 
     function updateFilters() {
         if(!webCheck.checked && !gameCheck.checked && !musicCheck.checked && !otherCheck.checked) {
