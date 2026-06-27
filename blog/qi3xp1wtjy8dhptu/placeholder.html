@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>replace later</p>
+    <button onclick="ask();">Button</button>
+</body>
+<script>
+    //obfuscate when link exists
+    console.error("if you just disabled additional dialog messages, i don't know what to tell you.");
+    var time = 1;
+    function ask() {
+        if(time == 1) {
+            prompt("Please enter the password.");
+            alert("Incorrect password, please try again.");
+            time++;
+        } else {
+            prompt("Please enter the password.");
+            alert("Correct!");
+            alert("Just kidding. Did you really think you guessed the password on your 2nd try?");
+            alert("Here's the link for trying anyway.");
+            alert("Placeholder link");
+        }
+    }
+</script>
+</html>
