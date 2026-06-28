@@ -423,7 +423,8 @@
     </div>
 </body>
 <script>
-    const itmoves = new Audio("it_moves.mp3")
+    const itmoves = new Audio("it_moves.mp3");
+    const impact = new Audio("impact.wav");
     itmoves.loop = true;
 
     var welcome = document.getElementById("welcome");
@@ -465,8 +466,13 @@
             whole.style.backgroundImage = "none";
             entry.style.display = "none";
             itmoves.pause();
+            impact.play();
             clearInterval(checkVals);
+            setTimeout(redirectPage, 1000);
         }
+    }
+    function redirectPage() {
+        window.location = "";
     }
 </script>
 </html>
