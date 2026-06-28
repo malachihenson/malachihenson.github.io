@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the end</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon3.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+        html {
+            background-image: url("bg.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100%;
+            background-repeat: repeat-y;
+            background-color: black;
+        }
+        body {
+            font-family: "DM Sans", sans-serif;
+            color: white;
+            text-align: center;
+            margin: 0;
+        }
+        h1, h2 {
+            font-weight: 200;
+        }
+        #welcome h1 {
+            font-size: 60px;
+        }
+        #welcome {
+            margin-top: 10%;
+            display: block;
+        }
+        #welcome button {
+            font-family: "DM Sans", sans-serif;
+            background: none;
+            border: 1px solid white;
+            color: white;
+            padding: 10px;
+            font-size: 15px;
+            margin-top: 20px;
+        }
+        #welcome button:hover {
+            text-decoration: underline;
+        }
+        #entry {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            margin: 0;
+            display: none;
+            padding-bottom: 50px;
+        }
+        #entry h1 {
+            font-size: 40px;
+            margin: 0;
+            padding-top: 30px;
+        }
+        .inputSpace {
+            background: none;
+            border: none;
+            border-bottom: 1px solid white;
+            border-radius: 0;
+            color: white;
+            font-size: 20px;
+            font-family: "DM Sans", sans-serif;
+            width: 20px;
+            text-align: center;
+            height: 40px;
+        }
+        .inputSpace:focus {
+            outline-style: solid;
+            outline: none;
+        }
+        .middleBreak {
+            margin-right: 30px;
+        }
+        .inputRow {
+            margin-top: 20px;
+        }
+        .inputText {
+            height: 40px;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+        #topRow {
+            margin-top: 40px;
+        }
+
+        @keyframes fade {
+            0% {opacity: 1;}
+            90% {opacity: 0;}
+            100% {opacity: 0;}
+        }
+        @keyframes unfade {
+            0% {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+    <div id="welcome">
+        <h1>Welcome!</h1>
+        <h2>Let's get you on your way.</h2>
+        <button onclick="startStage();">Get Started</button>
+    </div>
+    <div id="entry">
+        <div id="entryContent">
+            <h1>Entry</h1>
+            <h2>What were their titles?</h2>
+            <div id="spaces">
+                <div class="inputRow" id="topRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">.</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText middleBreak">,</span>
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">,</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">'</span>
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">,</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">,</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">,</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">.</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">.</span>
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                </div>
+                <div class="inputRow">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace middleBreak" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <input class="inputSpace" type="text" maxlength="1">
+                    <span class="inputText">.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const itmoves = new Audio("it_moves.mp3")
+    itmoves.loop = true;
+
+    var welcome = document.getElementById("welcome");
+    var entry = document.getElementById("entry");
+    var spaces = document.getElementsByClassName("inputSpace");
+    var entryContent = document.getElementById("entryContent");
+    var whole = document.getElementsByTagName("html")[0];
+
+    var valueStr = "";
+    var xuqowehrwiuehrfikub = "maybeourpathswillcrosswhenthisuniversefoldsinandmakesanothermaybeatthepointwhenallthatisandallthatseverbeencollapsesintoeverythingelseandisremadeourpathswillcrosshoweverbrieflyandourterminusbecomeajunctionitmaybealongshotiwilltakeitandhopeandtrustourpathswillcrossagain";
+
+    for(var i=0; i<spaces.length; i++) {
+        spaces[i].value = "";
+    }
+    
+    setInterval(checkVals, 500);
+
+    function startStage() {
+        welcome.style.animation = "fade 1s linear 1";
+        setTimeout(stageMid, 950);
+    }
+    function stageMid() {
+        itmoves.play();
+        welcome.style.display = "none";
+        setTimeout(stageEnd, 1000);
+    }
+    function stageEnd() {
+        entry.style.display = "block";
+        entry.style.animation = "unfade 2s linear 1";
+        console.info("Think back to the beginning of your journey.");
+        console.info("What stayed with you always, but never found a use?")
+    }
+    function checkVals(test) {
+        valueStr = "";
+        for(var i=0; i<spaces.length; i++) {
+            valueStr += spaces[i].value;
+        }
+        if(valueStr.toLowerCase() == xuqowehrwiuehrfikub || test == true) {
+            whole.style.backgroundImage = "none";
+            entry.style.display = "none";
+            itmoves.pause();
+            clearInterval(checkVals);
+        }
+    }
+</script>
+</html>
