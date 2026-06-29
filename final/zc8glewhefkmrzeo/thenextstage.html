@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>the end</title>
+    <title>click to start, one last time</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon3.ico">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
         html {
             background-color: black;
             background-image: url("bg30.png");
@@ -15,15 +16,54 @@
             background-color: rgba(0, 0, 0, 0.8);
             width: 100%;
             height: 100vh;
+            animation-fill-mode: both;
+            font-family: "DM Sans", sans-serif;
+        }
+        @keyframes step1 {
+            0% {background-color: rgba(0, 0, 0, 1);}
+            100% {background-color: rgba(0, 0, 0, 0.8);}
+        }
+        #container {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #mainText {
+            margin: 0;
+            color: white;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            font-weight: 200;
+            font-size: 40px;
         }
     </style>
 </head>
 <body>
-
+    <div id="container">
+        <p id="mainText"></p>
+    </div>
 </body>
 <script>
+    //there's no need to even try here anymore, enjoy easy-to-read code :)
     const asitpours = new Audio("as_it_pours.mp3");
-    //stupid
-    asitpours.play();
+    const body = document.getElementsByTagName("body")[0];
+    const mainText = document.getElementById("mainText");
+
+    var step = 0;
+    
+    document.addEventListener("click", function(event) {
+        asitpours.play();
+        body.style.animation = "step1 4s ease-in-out 1 both";
+        document.title = "the end";
+    });
+
+    function showStep() {
+        switch(step) {
+
+        }
+    }
 </script>
 </html>
