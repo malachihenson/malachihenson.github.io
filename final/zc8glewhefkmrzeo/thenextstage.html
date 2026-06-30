@@ -65,12 +65,15 @@
     const mainText = document.getElementById("mainText");
 
     var step = 0;
+    var started = false;
     
     document.addEventListener("click", function(event) {
-        asitpours.play();
-        body.style.animation = "step1 4s ease-in-out 1 both";
-        document.title = "the end";
-        setTimeout(showStep, 8000);
+        if(!started) {
+            asitpours.play();
+            body.style.animation = "step1 4s ease-in-out 1 both";
+            document.title = "the end";
+            setTimeout(showStep, 8000);
+        }
     });
 
     //put all values in seconds so I have a reason to do the cool conversion thing later

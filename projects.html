@@ -127,8 +127,44 @@
             width: 95%;
             margin: auto;
         }
+        @media screen and (max-width: 600px) {
+            #topBar {
+                display: block;
+                justify-content: center;
+            }
+            #pHeader, #homeLink {
+                margin: 30px auto;
+            }
+            #homeLink {
+                width: 200px;
+            }
+            #menu {
+                flex-direction: column;
+            }
+            #content {
+                display: block;
+            }
+            #filterBox {
+                width: 80%;
+                margin: auto;
+            }
+            #content {
+                margin: 50px 0;
+            }
+            #wrapper {
+                width: 90%;
+            }
+            .projectText {
+                margin: 0;
+            }
+            #warning {
+                font-size: 20px;
+                width: 80%;
+            }
+        }
     </style>
 </head>
+<!--To do: add thumbnail images and center home link for mobile view-->
 <body>
     <div id="wrapper">
         <div id="topBar">
