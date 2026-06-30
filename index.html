@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&family=Lacquer&family=Libre+Barcode+128&family=Reenie+Beanie&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
         html {
             background-image: url("img/home/paperBg.jpg");
             background-repeat: no-repeat;
@@ -99,6 +100,30 @@
             font-size: 37px;
             margin-top: 100px;
         }
+        #warning {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+        #warningContent {
+            font-family: "Google Sans", sans-serif;
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%;
+            text-align: center;
+            border-radius: 5px;
+        }
+        #warningContent button {
+            font-family: "Google Sans", sans-serif;
+            padding: 5px 20px;
+        }
         @media screen and (max-width: 1150px) {
             #wrapper {
                 width: 90%;
@@ -122,8 +147,14 @@
         }
     </style>
 </head>
-<!--To do: add mobile warning modal-->
 <body>
+    <div id="warning">
+        <div id="warningContent">
+            <h1>Caution</h1>
+            <p>While all main pages should be accessible from mobile phones, some older/more obscure content may break or have reduced functionality.</p>
+            <button onclick="closeModal();">OK</button>
+        </div>
+    </div>
     <div id="wrapper">
         <div id="welcomeContainer">
             <h1 id="welcome">Hello!</h1>
@@ -147,4 +178,16 @@
         </div>
     </div>
 </body>
+<script>
+    const warning = document.getElementById("warning");
+
+    if(window.innerWidth <= 700 && !localStorage.getItem("visited")) {
+        warning.style.display = "block";
+    }
+
+    function closeModal() {
+        warning.style.display = "none";
+        localStorage.setItem("visited", true);
+    }
+</script>
 </html>
