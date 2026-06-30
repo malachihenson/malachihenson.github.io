@@ -13,7 +13,7 @@
         }
         body {
             margin: 0;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(0, 0, 0, 1);
             width: 100%;
             height: 100vh;
             animation-fill-mode: both;
@@ -30,7 +30,7 @@
         }
         #mainText {
             margin: 0;
-            color: white;
+            color: rgba(255, 255, 255, 0);
             position: absolute;
             left: 50%;
             top: 50%;
@@ -38,6 +38,18 @@
             transform: translate(-50%, -50%);
             font-weight: 200;
             font-size: 40px;
+            width: 80%;
+        }
+        @keyframes fadeIn {
+            0% {color: rgba(255, 255, 255, 0);}
+            100% {color: rgba(255, 255, 255, 1);}
+        }
+        @keyframes fadeOut {
+            0% {color: rgba(255, 255, 255, 1);}
+            100% {color: rgba(255, 255, 255, 0);}
+        }
+        a {
+            color: white;
         }
     </style>
 </head>
@@ -58,12 +70,82 @@
         asitpours.play();
         body.style.animation = "step1 4s ease-in-out 1 both";
         document.title = "the end";
+        setTimeout(showStep, 8000);
     });
 
+    //put all values in seconds so I have a reason to do the cool conversion thing later
     function showStep() {
         switch(step) {
-
+            case 0:
+                ut("You've made it to the very end.", 4, 4);
+                break;
+            case 1:
+                ut("In doing so, you’ve shown your dedication to accomplishing something difficult.", 6, 4);
+                break;   
+            case 2:
+                ut("You didn’t need to do this, but you cared enough to do it anyway.", 6, 4);
+                break;
+            case 3:
+                ut("Whether you’re the first person to read this or the 500th, your effort to invest your time into something I created is more than enough to earn you the title of “friend”.", 8, 4);
+                break; 
+            case 4:
+                ut("In the past, I was much more cautious about giving this title.", 4, 4);
+                break;
+            case 5:
+                ut("My insecurities wouldn’t let me see the level of care that you and so many others expressed towards me.", 6, 4);
+                break;
+            case 6:
+                ut("I thought that I was alone.", 4, 4);
+                break; 
+            case 7:
+                ut("But over the years, you have all helped me to see past my imperfections.", 6, 4);
+                break;
+            case 8:
+                ut("Without you, I wouldn’t have made the scary commitment to share this website.", 6, 4);
+                break;
+            case 9:
+                ut("Without your care for me, you wouldn’t be reading these words right now.", 6, 4);
+                break;
+            case 10:
+                ut("Words cannot express my thankfulness for each and every one of you.", 6, 4);
+                break; 
+            case 11:
+                ut("And although my head tells me very few will ever reach this point,", 5, 4);
+                break; 
+            case 12:
+                ut("My heart stays hopeful.", 4, 4);
+                break;
+            case 13:
+                ut("My heart stays hopeful that there are more people out there who will be able to appreciate me in the same way that you have.", 8, 4);
+                break;
+            case 14:
+                ut("My heart stays hopeful that even if I never see you again, that I have made some positive impact in your life that keeps me in your mind.", 8, 4);
+                break; 
+            case 15:
+                ut("My heart stays hopeful, even when my head denies it, that one day I’ll be able to share my ultimate work with you.", 8, 4);
+                break;
+            case 16:
+                ut("But until then, I wish you the very best for your future", 4, 4);
+                break;
+            case 17:
+                ut("And may our paths cross once again.", 4, 2);
+                break;
+            case 18:
+                ut("-Malachi", 8, 4);
+                break; 
+            case 19:
+                ut("To record your placement, please visit <a href=\"https://forms.gle/yFnnhH8b3rc8rUev9\">https://forms.gle/yFnnhH8b3rc8rUev9</a>", 1000, 0)                                                                             
         }
+    }
+    function ut(textString, displayTime, waitTime) {
+        step++;
+        mainText.innerHTML = textString;
+        mainText.style.animation = "fadeIn 0.5s ease-in-out 1 both";
+        setTimeout(up, (displayTime * 1000) + 500, waitTime);
+    }
+    function up(waitTime) {
+        mainText.style.animation = "fadeOut 0.5s ease-in-out 1 both";
+        setTimeout(showStep, (waitTime * 1000) + 500);
     }
 </script>
 </html>
