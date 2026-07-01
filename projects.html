@@ -131,6 +131,13 @@
             width: 95%;
             margin: auto;
         }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+        }
+        footer p a:hover {
+            text-decoration: underline;
+        }
         @media screen and (max-width: 600px) {
             #topBar {
                 flex-direction: column;
@@ -168,13 +175,12 @@
         }
     </style>
 </head>
-<!--To do: add thumbnail images and center home link for mobile view-->
 <body>
     <div id="wrapper">
-        <div id="topBar">
+        <header id="topBar">
             <h1 id="pHeader">Projects</h1>
             <a href="index.html" id="homeLink">Home</a>
-        </div>
+        </header>
         <!--All search and storage will be client-side for now because of the deadline-->
         <div id="menu">
             <div id="filterBox">
@@ -189,9 +195,9 @@
                     <input type="button" onclick="updateFilters();" value="Filter" id="filterSubmit">
                 </div>
             </div>
-            <div id="content">
+            <section id="content">
                 <h1 id="warning">Warning: These sites do not link back to the original page. Be careful.</h1>
-                <div class="project">
+                <article class="project">
                     <a href="projects/prime/index.html">
                         <img src="img/projects/projectThumb/pth1.png" width="100px">
                         <div class="projectText">
@@ -199,8 +205,8 @@
                             <p>Inspired by a YouTube video I saw a while ago.</p>
                         </div>
                     </a>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <a href="projects/tib/index.html">
                         <img src="img/projects/projectThumb/pth2.png" width="100px">
                         <div class="projectText">
@@ -208,8 +214,8 @@
                             <p>Created as a joke for my friends.</p>
                         </div>
                     </a>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <a href="projects/igmt/index.html">
                         <img src="img/projects/projectThumb/pth3.png" width="100px">
                         <div class="projectText">
@@ -217,8 +223,8 @@
                             <p>A school project. There originally was a complete build of this site, but I can't find it, so this is unfinished.</p>
                         </div>
                     </a>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <a href="projects/whenthisuniversefoldsin/index.html">
                         <img src="img/projects/projectThumb/pth4.png" width="100px">
                         <div class="projectText">
@@ -226,8 +232,8 @@
                             <p>A hash validation test.</p>
                         </div>
                     </a>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <a href="projects/rickroll/index.html">
                         <img src="img/projects/projectThumb/pth5.png" width="100px">
                         <div class="projectText">
@@ -235,8 +241,8 @@
                             <p>I made this to prank my friends.</p>
                         </div>
                     </a>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <a href="projects/webold1/index.html">
                         <img src="img/projects/projectThumb/pth6.png" width="100px">
                         <div class="projectText">
@@ -244,8 +250,8 @@
                             <p>My most recent attempt at a personal website.</p>
                         </div>
                     </a>
-                </div>
-                <div class="project">
+                </article>
+                <article class="project">
                     <a href="projects/webold2/index.html">
                         <img src="img/projects/projectThumb/pth7.png" width="100px">
                         <div class="projectText">
@@ -253,10 +259,13 @@
                             <p>My oldest surviving personal website.</p>
                         </div>
                     </a>
-                </div>
-            </div>
+                </article>
+            </section>
         </div>
     </div>
+    <footer>
+        <p>©2026 Malachi Henson | <a href="https://forms.gle/vXwXZQk5EJTK1fQd8">Report a Bug</a></p>
+    </footer>
 </body>
 <script>
     var webCheck = document.getElementById("webCheck");

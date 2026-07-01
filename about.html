@@ -29,11 +29,14 @@
             width: 80%;
             margin: auto;
         }
-        #header {
+        header {
             background-color: #00bcd4;
         }
         iframe {
             margin: auto;
+        }
+        footer p {
+            font-size: 15px;
         }
         @media screen and (max-width: 640px) {
             #wrapper {
@@ -55,9 +58,9 @@
     </style>
 </head>
 <body>
-    <div id="header">
+    <header>
         <a href="index.html"><img src="img/about/logo.png" width="400px"></a>
-    </div>
+    </header>
     <div id="wrapper">
         <h1>I don't have anything to put here.</h1>
         <h2>Ask a question in the Google Form and I'll answer it below I guess</h2>
@@ -66,11 +69,16 @@
         <h1>AQ</h1>
         <h2>(asked questions, but not frequently)</h2>
         <br>
-        <div class="qa">
-            <h3>Q: Why are there no questions here?</h3>
-            <p>A: There are quite a few yet to be answered (if you know where to look).</p>
+        <section class="qa">
+            <article>
+                <h3>Q: Why are there no questions here?</h3>
+                <p>A: There are quite a few yet to be answered (if you know where to look).</p>
+            </article>
             <br>
-        </div>
+        </section>
     </div>
+    <footer>
+        <p>©2026 Malachi Henson | <a href="https://forms.gle/vXwXZQk5EJTK1fQd8">Report a Bug</a></p>
+    </footer>
 </body>
 </html>

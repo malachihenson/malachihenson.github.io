@@ -125,6 +125,14 @@
             font-family: "Google Sans", sans-serif;
             padding: 5px 20px;
         }
+        footer {
+            color: white;
+            text-align: center;
+            font-family: "Google Sans", sans-serif;
+        }
+        footer p a{
+            color: white;
+        }
         @media screen and (max-width: 1150px) {
             #wrapper {
                 width: 90%;
@@ -157,10 +165,10 @@
         </div>
     </div>
     <div id="wrapper">
-        <div id="welcomeContainer">
+        <header id="welcomeContainer">
             <h1 id="welcome">Hello!</h1>
-        </div>
-        <div id="navigation">
+        </header>
+        <nav id="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -169,15 +177,18 @@
                 <li><a href="about.html">About</a></li>
                 <li id="barcode">ccJw40oRMAESml+r</li>
             </ul>
-        </div>
-        <div id="about">
+        </nav>
+        <section id="about">
             <h2>Welcome to my website!</h2>
             <div id="lowerArea">
                 <p>I'm Malachi Henson, but I go by DoubleSharp on some parts of the Internet. I upload anything that I think is important or cool here.</p>
                 <img src="img/home/me.jpg" alt="image of me">
             </div>
-        </div>
+        </section>
     </div>
+    <footer>
+        <p>©2026 Malachi Henson | <a href="https://forms.gle/vXwXZQk5EJTK1fQd8">Report a Bug</a></p>
+    </footer>
 </body>
 <script>
     const warning = document.getElementById("warning");
